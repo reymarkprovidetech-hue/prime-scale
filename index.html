@@ -1,922 +1,1024 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prime Scale | Facebook &amp; Social Media Ads</title>
-<meta name="description" content="Prime Scale runs Facebook, TikTok and Shopee ads that turn ad spend into messages, bookings and sales. See our results and set an appointment.">
-<meta property="og:title" content="Prime Scale | Facebook &amp; Social Media Ads">
-<meta property="og:description" content="We turn ad spend into messages, bookings and sales. 18 cars sold from ₱18,000 in ad spend in a single month.">
+<title>Prime Scale | We scale brands. You grow.</title>
+<meta name="description" content="Prime Scale runs Facebook, Instagram, TikTok and Shopee ads that turn ad spend into messages, bookings and sales. See real results and set an appointment.">
+<meta property="og:title" content="Prime Scale | We scale brands. You grow.">
+<meta property="og:description" content="Facebook, Instagram, TikTok and Shopee ads that turn ad spend into messages, bookings and sales. 18 cars sold in a month on ₱18,000 of ad spend.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#2457ff">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232457ff'/%3E%3Cpath d='M8 22V16M14 22V12M20 22V8' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<!-- After you know your final web address, change this to the full link, e.g. https://yourname.vercel.app/images/og.jpg -->
+<meta property="og:image" content="/images/og.jpg">
+<meta name="theme-color" content="#05080f">
+<link rel="icon" type="image/png" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 <script>
   document.documentElement.classList.add('js');
-  try {
-    var saved = localStorage.getItem('theme');
-    var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  } catch (e) {}
+  try { var t = localStorage.getItem('ps_theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
 <style>
   :root {
-    --bg: #f6f8fc;
-    --surface: #ffffff;
-    --ink: #0b1220;
-    --muted: #5a6479;
-    --line: #e3e8f1;
-    --accent: #2457ff;
-    --accent-ink: #ffffff;
-    --accent-soft: #e9efff;
-    --teal: #00b49b;
-    --hero-glow: rgba(36, 87, 255, .14);
-    --shadow: 0 1px 2px rgba(11,18,32,.04), 0 8px 24px rgba(11,18,32,.06);
-    --radius: 18px;
-    --font-head: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --bg: #05080f; --surface: #0a1020; --raised: #101a30; --line: #1a2744;
+    --text: #eaf0ff; --muted: #8c9ab6;
+    --blue: #1e8fff; --sky: #46c6ff; --on-blue: #031024; --glow: rgba(30,143,255,.38);
+    --display: 'Unbounded', 'Hanken Grotesk', system-ui, sans-serif;
+    --body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --wrap: 1180px;
   }
-  [data-theme="dark"] {
-    --bg: #080d19;
-    --surface: #111a2c;
-    --ink: #eef2fa;
-    --muted: #9ba7be;
-    --line: #202b43;
-    --accent: #5f86ff;
-    --accent-ink: #060b16;
-    --accent-soft: #17254a;
-    --teal: #2fd8bf;
-    --hero-glow: rgba(95, 134, 255, .18);
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  [data-theme="light"] {
+    --bg: #f2f5fb; --surface: #ffffff; --raised: #e7edf8; --line: #d5deee;
+    --text: #0a1020; --muted: #526079;
+    --blue: #1668e3; --sky: #0a86cf; --on-blue: #ffffff; --glow: rgba(22,104,227,.22);
   }
-
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: var(--font-body); font-size: 16px; line-height: 1.65;
-    -webkit-font-smoothing: antialiased; transition: background .25s, color .25s;
-  }
-  img { max-width: 100%; display: block; }
+  html { overflow-x: clip; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 400 17px/1.65 var(--body); -webkit-font-smoothing: antialiased; transition: background .3s, color .3s; overflow-x: hidden; }
+  img { max-width: 100%; height: auto; display: block; }
   a { color: inherit; text-decoration: none; }
-  h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.15; margin: 0; letter-spacing: -0.02em; }
-  p { margin: 0; }
-  button { font: inherit; color: inherit; }
-  .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-  section { padding: 88px 0; scroll-margin-top: 64px; }
-  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-  .section-head { max-width: 680px; margin-bottom: 40px; }
-  .section-head h2 { font-size: clamp(28px, 4.5vw, 40px); margin-bottom: 12px; }
-  .section-head p { color: var(--muted); font-size: 17px; }
-  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  h1, h2, h3, h4, p, figure, ol, ul, dl, dd { margin: 0; }
+  ol, ul { padding: 0; list-style: none; }
+  [hidden] { display: none !important; }
+  :focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; border-radius: 6px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .ic { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .ic.fill { fill: currentColor; stroke: none; }
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
 
-  /* Header */
-  header.site {
-    position: sticky; top: 0; z-index: 50;
-    backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
-    background: color-mix(in srgb, var(--bg) 82%, transparent);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
-  .brand svg { flex: none; }
-  .nav-links { display: flex; align-items: center; gap: 24px; font-size: 14.5px; font-weight: 500; color: var(--muted); }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-right { display: flex; align-items: center; gap: 10px; }
-  .icon-btn {
-    width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line);
-    background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; font-size: 17px;
-  }
-  .icon-btn:hover { border-color: var(--accent); }
-  .menu-btn { display: none; }
+  /* Type */
+  h1 { font: 700 clamp(2.5rem, 7.4vw, 6.4rem)/1.02 var(--display); letter-spacing: -0.035em; }
+  h2 { font: 600 clamp(1.85rem, 4.2vw, 3.2rem)/1.1 var(--display); letter-spacing: -0.028em; }
+  h3 { font: 600 1.15rem/1.3 var(--display); letter-spacing: -0.015em; }
+  .lead { font-size: clamp(1.05rem, 1.7vw, 1.3rem); color: var(--muted); max-width: 56ch; }
+  .muted { color: var(--muted); }
 
   /* Buttons */
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-    padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 15px;
-    border: 1px solid transparent; cursor: pointer; transition: transform .15s, box-shadow .15s, background .15s;
-  }
-  .btn:hover { transform: translateY(-1px); }
-  .btn-primary { background: var(--accent); color: var(--accent-ink); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 35%, transparent); }
-  .btn-ghost { background: var(--surface); border-color: var(--line); color: var(--ink); }
-  .btn-ghost:hover { border-color: var(--accent); }
-  .btn-sm { padding: 9px 16px; font-size: 14px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 24px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-weight: 600; font-size: 15.5px; transition: transform .2s, box-shadow .2s, border-color .2s, background .2s; }
+  .btn:hover { transform: translateY(-2px); border-color: var(--blue); }
+  .btn.primary { border: 0; background: linear-gradient(135deg, #1470f0, #1fb0ff); color: #031024; box-shadow: 0 10px 34px -10px var(--glow); }
+  .btn.primary:hover { box-shadow: 0 14px 40px -8px var(--glow); }
+  .btn.sm { padding: 10px 18px; font-size: 14.5px; }
+  .btn[disabled] { opacity: .6; cursor: wait; transform: none; }
+
+  /* Nav */
+  .nav { position: fixed; inset: 0 0 auto 0; z-index: 60; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+  .nav.solid { background: color-mix(in srgb, var(--bg) 84%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+  .nav-in { max-width: 1360px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; gap: 22px; }
+  .brand { display: flex; align-items: center; gap: 12px; font: 600 15px var(--display); letter-spacing: -0.02em; }
+  .brand img { width: 44px; height: 44px; border-radius: 50%; }
+  .links { display: flex; gap: 22px; margin-left: auto; font-size: 14.5px; font-weight: 500; color: var(--muted); }
+  .links a { position: relative; padding: 6px 0; transition: color .2s; }
+  .links a:hover, .links a.on { color: var(--text); }
+  .links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+  .links a.on::after, .links a:hover::after { transform: scaleX(1); }
+  .nav-tools { display: flex; align-items: center; gap: 10px; }
+  .icon-btn { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; transition: border-color .2s; }
+  .icon-btn:hover { border-color: var(--blue); }
+  .menu-btn { display: none; }
+  .menu { position: fixed; inset: 72px 0 auto 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 24px 24px; display: none; z-index: 59; }
+  .menu.open { display: block; }
+  .menu a { display: block; padding: 15px 0; border-bottom: 1px solid var(--line); font-weight: 500; }
+  @media (max-width: 1240px) { .links { display: none; } .menu-btn { display: grid; } .nav-tools { margin-left: auto; } }
+  @media (max-width: 520px) { .nav-tools .btn { display: none; } .brand span { font-size: 14px; } }
+
+  /* Scale rail */
+  .rail { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 40; display: none; }
+  @media (min-width: 1400px) { .rail { display: block; } }
+  .rail ol { position: relative; display: grid; gap: 20px; }
+  .rail ol::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--line); }
+  .rail .fill { position: absolute; left: 5px; top: 6px; width: 1px; background: var(--blue); height: 0; box-shadow: 0 0 8px var(--blue); }
+  .rail a { display: flex; align-items: center; gap: 12px; position: relative; font-size: 12.5px; font-weight: 500; color: var(--muted); }
+  .rail a i { width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 1px solid var(--muted); position: relative; z-index: 1; transition: .25s; }
+  .rail a span { opacity: 0; transform: translateX(-6px); transition: .25s; white-space: nowrap; background: var(--surface); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; }
+  .rail a:hover span, .rail a:focus-visible span { opacity: 1; transform: none; color: var(--text); }
+  .rail a.on i { background: var(--blue); border-color: var(--blue); box-shadow: 0 0 0 4px var(--glow); }
 
   /* Hero */
-  .hero {
-    padding: 96px 0 72px;
-    background:
-      radial-gradient(900px 420px at 85% -10%, var(--hero-glow), transparent 70%),
-      radial-gradient(700px 360px at 0% 30%, color-mix(in srgb, var(--teal) 12%, transparent), transparent 70%);
+  .hero { position: relative; min-height: min(100svh, 940px); display: flex; flex-direction: column; justify-content: flex-end; padding-top: 112px; overflow: hidden; isolation: isolate; }
+  .hero::before { content: ''; position: absolute; inset: 0; z-index: -2; background: radial-gradient(900px 560px at 82% 96%, var(--glow), transparent 70%), radial-gradient(700px 400px at 0% 0%, color-mix(in srgb, var(--blue) 14%, transparent), transparent 70%); }
+  .hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 72px 72px; opacity: .45; -webkit-mask-image: radial-gradient(70% 70% at 70% 80%, #000, transparent); mask-image: radial-gradient(70% 70% at 70% 80%, #000, transparent); }
+  .hero-copy { padding-bottom: clamp(40px, 7vw, 84px); max-width: 700px; position: relative; z-index: 2; }
+  .hero h1 { display: block; }
+  .hero h1 .ln { display: block; }
+  .hero h1 .wd { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .08em; margin-right: .22em; }
+  .hero h1 .wd > span { display: inline-block; transform: translateY(110%); animation: up .9s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--i) * 90ms + 150ms); }
+  .hero .lead { margin-top: 28px; opacity: 0; animation: fade .8s ease .9s forwards; }
+  .hero .cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; opacity: 0; animation: fade .8s ease 1.1s forwards; }
+  .stage { position: absolute; right: -1%; bottom: 0; width: min(64vw, 960px); height: 88%; z-index: 0; pointer-events: none; }
+  .stage svg { width: 100%; height: 100%; overflow: visible; }
+  .bar { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); animation: rise 1s cubic-bezier(.2,.9,.2,1) forwards; animation-delay: calc(var(--i) * 80ms + 300ms); }
+  .bar-r { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(var(--s, 1)); transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .arrow-path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.5s cubic-bezier(.5,0,.2,1) 1s forwards; filter: drop-shadow(0 0 14px rgba(70,198,255,.75)); }
+  .arrow-head { opacity: 0; transform-box: fill-box; transform-origin: center; transform: scale(.4); animation: pop .5s ease 2.35s forwards; filter: drop-shadow(0 0 12px rgba(70,198,255,.9)); }
+  @keyframes up { to { transform: none; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes rise { to { transform: scaleY(1); } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes pop { to { opacity: 1; transform: none; } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes tick { to { transform: translateX(-50%); } }
+  .proof { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); background: linear-gradient(to top, var(--bg) 55%, transparent); }
+  .proof > div { padding: 26px 24px 30px 0; }
+  .proof > div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+  .proof b { display: block; font: 600 clamp(2rem, 3.6vw, 3rem)/1 var(--display); letter-spacing: -0.04em; }
+  .proof span { display: block; margin-top: 10px; color: var(--muted); font-size: 14.5px; line-height: 1.45; max-width: 24ch; }
+  @media (max-width: 900px) {
+    .stage { width: 120%; right: -20%; height: 58%; opacity: .5; }
+    .proof { grid-template-columns: 1fr 1fr; }
+    .proof > div:nth-child(3) { padding-left: 0; border-left: 0; }
+    .proof > div:nth-child(n+3) { border-top: 1px solid var(--line); }
   }
-  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 13px; font-weight: 500; color: var(--muted); margin-bottom: 24px; }
-  .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block; box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal) 25%, transparent); }
-  .hero h1 { font-size: clamp(38px, 7.2vw, 72px); font-weight: 800; max-width: 900px; }
-  .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--teal)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero .lead { margin-top: 22px; max-width: 640px; font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 64px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-  .stat b { display: block; font-family: var(--font-head); font-size: clamp(28px, 4vw, 38px); letter-spacing: -0.03em; }
-  .stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.4; }
 
-  /* Who is Prime Scale */
-  .who-intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: stretch; }
-  .who-intro .text p { color: var(--muted); font-size: 17px; }
-  .who-intro .text p + p { margin-top: 14px; }
-  .mission { padding: 32px; border-radius: 24px; background: linear-gradient(135deg, #0b1b4d 0%, #1a3fd0 65%, #00a38d 140%); color: #fff; font-family: var(--font-head); font-size: clamp(18px, 2.4vw, 22px); line-height: 1.4; letter-spacing: -0.01em; display: flex; flex-direction: column; justify-content: center; }
-  .mission small { display: block; margin-top: 14px; font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,.75); letter-spacing: 0; }
-  .people { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-  .person { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 32px; box-shadow: var(--shadow); }
-  .person-top { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
-  .avatar { position: relative; flex: none; width: 96px; height: 96px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, var(--accent), var(--teal)); }
-  .avatar img { width: 100%; height: 100%; object-fit: cover; }
-  .avatar.dl img { transform: scale(1.12); object-position: 50% 20%; }
-  .avatar.rd img { object-position: 50% 15%; }
-  .person h3 { font-size: 22px; }
-  .role { color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 4px; }
-  .person p { color: var(--muted); }
-  .person p + p { margin-top: 12px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-  .chip { padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; }
-  .chip.plain { background: var(--bg); border: 1px solid var(--line); color: var(--ink); font-weight: 500; }
-  .subhead { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; margin: 56px 0 20px; }
-  .subhead h3 { font-size: 22px; }
-  .subhead span { font-size: 14px; color: var(--muted); }
-  .services { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-  .service { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: flex-start; }
-  .service i { flex: none; width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-style: normal; font-size: 18px; }
-  .service b { display: block; font-size: 15px; }
-  .service span { display: block; font-size: 13.5px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+  /* Ticker */
+  .ticker { border-block: 1px solid var(--line); overflow: hidden; white-space: nowrap; background: var(--surface); }
+  .ticker .track { display: inline-flex; animation: tick 60s linear infinite; padding: 18px 0; }
+  .ticker .track span { display: inline-flex; align-items: center; gap: 26px; padding-right: 26px; font: 500 15px var(--display); letter-spacing: -0.01em; color: var(--muted); }
+  .ticker .track span::after { content: ''; width: 8px; height: 22px; border-radius: 2px; background: linear-gradient(to top, var(--blue), var(--sky)); opacity: .8; transform: skewX(-12deg); }
+  .ticker:hover .track { animation-play-state: paused; }
 
-  /* Zoomable images + lightbox */
-  .zoom { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; text-align: inherit; }
-  .zoom img { width: 100%; height: auto; }
-  .zoom::after { content: "Tap to enlarge"; position: absolute; right: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(11,18,32,.78); color: #fff; font-size: 11.5px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none; }
-  .zoom:hover::after, .zoom:focus-visible::after { opacity: 1; }
-  .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(5,9,18,.88); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 56px 16px 24px; }
-  .lightbox[hidden] { display: none; }
-  .lightbox figure { margin: 0; max-width: min(1200px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-  .lightbox img { max-width: 100%; max-height: calc(100vh - 150px); width: auto; height: auto; border-radius: 12px; background: #fff; }
-  .lightbox figcaption { color: #dbe3f3; font-size: 14px; text-align: center; }
-  .lb-close { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.1); color: #fff; font-size: 20px; cursor: pointer; }
+  /* Sections */
+  .sec { padding: clamp(84px, 11vw, 150px) 0; scroll-margin-top: 40px; }
+  .sec-head { margin-bottom: clamp(36px, 5vw, 64px); max-width: 820px; }
+  .sec-head h2 + p { margin-top: 20px; }
+  .sec.alt { background: var(--surface); border-block: 1px solid var(--line); }
 
-  .awards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; align-items: start; }
-  .award { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-  .award .zoom img { background: #fff; }
-  .award .cap { padding: 14px 16px 16px; }
-  .award h4 { font-size: 15px; margin-bottom: 4px; }
-  .award p { font-size: 13px; color: var(--muted); line-height: 1.45; }
+  /* Who */
+  .who-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 7vw, 110px); align-items: center; }
+  .who-grid p { color: var(--muted); }
+  .who-grid p + p { margin-top: 18px; }
+  .who-grid h2 { margin-bottom: 28px; }
+  .medal { position: relative; width: min(100%, 400px); aspect-ratio: 1; margin: 20px auto; }
+  .medal > img { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 0 140px var(--glow); }
+  .medal .ring { position: absolute; border-radius: 50%; border: 1px dashed color-mix(in srgb, var(--blue) 60%, transparent); animation: spin 60s linear infinite; }
+  .medal .r1 { inset: -7%; }
+  .medal .r2 { inset: -15%; opacity: .45; animation-direction: reverse; animation-duration: 90s; }
+  .medal .orb { position: absolute; inset: -7%; animation: spin 14s linear infinite; }
+  .medal .orb::after { content: ''; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--sky); box-shadow: 0 0 18px 2px var(--sky); }
+  .founders { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); margin-top: clamp(64px, 9vw, 120px); }
+  .founder { display: grid; grid-template-columns: 128px 1fr; gap: 26px; align-items: start; padding-top: 30px; border-top: 1px solid var(--line); }
+  .founder .ph { width: 128px; height: 128px; border-radius: 50%; padding: 4px; background: conic-gradient(from 200deg, var(--blue), var(--sky), var(--blue)); transition: transform .4s, box-shadow .4s; }
+  .founder:hover .ph { transform: rotate(-4deg) scale(1.03); box-shadow: 0 0 40px var(--glow); }
+  .founder .ph img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 18%; border: 3px solid var(--bg); }
+  .founder h3 { font-size: 1.35rem; }
+  .founder .role { color: var(--sky); font-weight: 600; font-size: 14.5px; margin: 4px 0 14px; }
+  .founder p { color: var(--muted); font-size: 16px; }
+  .founder p + p { margin-top: 10px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .tag { padding: 5px 13px; border-radius: 999px; border: 1px solid var(--line); font-size: 13.5px; font-weight: 500; color: var(--muted); }
+  .what { margin-top: clamp(64px, 9vw, 120px); }
+  .what h3 { font-size: 1.5rem; margin-bottom: 28px; }
+  .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(24px, 4vw, 56px); }
+  .what-item { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid var(--line); }
+  .what-item .ic { width: 28px; height: 28px; color: var(--sky); margin-top: 3px; }
+  .what-item b { display: block; font-size: 17px; margin-bottom: 4px; }
+  .what-item span { color: var(--muted); font-size: 15.5px; line-height: 1.55; display: block; }
 
-  /* Contact info */
-  .contacts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
-  .contact-card h3 { font-size: 20px; }
-  .contact-card .role { margin: 4px 0 16px; }
-  .contact-card a.line { display: block; padding: 12px 0; border-top: 1px solid var(--line); font-weight: 500; word-break: break-word; }
-  .contact-card a.line:hover { color: var(--accent); }
-  .contact-card a.line small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; }
+  /* Mission & vision */
+  .mv { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .mv article { padding: clamp(36px, 5vw, 76px) clamp(20px, 4vw, 64px) clamp(36px, 5vw, 76px) 0; }
+  .mv article + article { padding: clamp(36px, 5vw, 76px) 0 clamp(36px, 5vw, 76px) clamp(20px, 4vw, 64px); border-left: 1px solid var(--line); }
+  .mv h3 { display: flex; align-items: center; gap: 16px; font-size: clamp(1.3rem, 2.2vw, 1.75rem); }
+  .mv .big-ic { width: 52px; height: 52px; stroke-width: 1.5; color: var(--sky); }
+  .draw path, .draw circle { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .draw.go path, .draw.go circle { stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s cubic-bezier(.5,0,.2,1); }
+  .draw.go circle:nth-child(2) { transition-delay: .25s; } .draw.go circle:nth-child(3) { transition-delay: .5s; }
+  .mv p { margin-top: 30px; font: 500 clamp(1.3rem, 2.15vw, 1.8rem)/1.45 var(--body); letter-spacing: -0.012em; }
+  .mv p .w { transition: opacity .4s; }
+  .mv p.wordy .w { opacity: .2; }
+  .mv p.wordy .w.on { opacity: 1; }
 
-  /* Projects */
-  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; padding: 40px; border-radius: 28px; color: #fff; background: linear-gradient(135deg, #0b1b4d 0%, #1a3fd0 60%, #00a38d 130%); box-shadow: var(--shadow); }
-  .feature .tag { background: rgba(255,255,255,.16); color: #fff; }
-  .feature h3 { font-size: clamp(26px, 4vw, 38px); margin: 14px 0 12px; }
-  .feature p { color: rgba(255,255,255,.82); }
-  .feature-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
-  .fnum { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: 16px; padding: 16px; }
-  .fnum b { display: block; font-family: var(--font-head); font-size: clamp(24px, 3.4vw, 34px); letter-spacing: -0.03em; line-height: 1; }
-  .fnum span { display: block; margin-top: 6px; font-size: 13px; color: rgba(255,255,255,.8); }
-  .fnum.wide { grid-column: 1 / -1; }
-  .feature-media { display: grid; grid-template-columns: 1fr; gap: 12px; }
-  .feature-media .zoom { border-radius: 14px; overflow: hidden; background: #fff; }
-  .feature-media .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  /* Awards */
+  .gallery { columns: 3 290px; column-gap: 22px; }
+  .award { break-inside: avoid; margin: 0 0 26px; }
+  .award .zoom { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+  .award .zoom img { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+  .award .zoom:hover img { transform: scale(1.04); }
+  .award figcaption { padding: 14px 4px 0; }
+  .award figcaption b { display: block; font-size: 16.5px; line-height: 1.35; }
+  .award figcaption span { color: var(--muted); font-size: 14.5px; }
 
-  .results { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
-  .result { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform .2s, border-color .2s; display: flex; flex-direction: column; }
-  .result:hover { transform: translateY(-3px); border-color: var(--accent); }
-  .result .zoom { aspect-ratio: 2 / 1; background: #fff; border-bottom: 1px solid var(--line); }
-  .result .zoom img { width: 100%; height: 100%; object-fit: contain; }
-  .result-body { padding: 18px 20px 20px; }
-  .result-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 14px; }
-  .tag { padding: 5px 11px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12.5px; font-weight: 600; }
-  .when { font-size: 12.5px; color: var(--muted); text-align: right; }
-  .big { font-family: var(--font-head); font-size: 36px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
-  .label { font-size: 14px; color: var(--muted); margin-top: 6px; }
-  .result dl { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .result dt { font-size: 12px; color: var(--muted); }
-  .result dd { margin: 2px 0 0; font-weight: 600; font-size: 15px; }
-  .result dd.good { color: var(--teal); }
+  /* Zoom buttons */
+  .zoom { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; overflow: hidden; }
+  .zoom img { width: 100%; }
+  .zoom::after { content: 'Click to enlarge'; position: absolute; right: 10px; bottom: 10px; padding: 5px 12px; border-radius: 999px; background: rgba(5,8,15,.82); color: #fff; font-size: 12px; font-weight: 600; opacity: 0; transform: translateY(4px); transition: .25s; pointer-events: none; }
+  .zoom:hover::after, .zoom:focus-visible::after { opacity: 1; transform: none; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); }
+  .pc { border-top: 1px solid var(--line); padding-top: 28px; }
+  .pc h3 { font-size: 1.4rem; }
+  .pc .role { color: var(--muted); margin: 6px 0 22px; }
+  .clink { display: grid; grid-template-columns: 46px 1fr 20px; gap: 16px; align-items: center; padding: 15px 0; border-top: 1px solid var(--line); }
+  .clink .cic { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--raised); transition: background .25s, color .25s, transform .25s; }
+  .clink small { display: block; color: var(--muted); font-size: 13.5px; line-height: 1.3; }
+  .clink b { font-weight: 600; word-break: break-word; font-size: 16.5px; }
+  .clink .go { width: 18px; height: 18px; color: var(--muted); transition: transform .25s, color .25s; }
+  .clink:hover .go { transform: translate(3px, -3px); color: var(--text); }
+  .clink:hover .cic { background: var(--blue); color: var(--on-blue); transform: scale(1.06); }
+  .clink.wa:hover .cic { background: #25d366; color: #052e14; }
+  .clink.fb:hover .cic { background: #1877f2; color: #fff; }
+  .official { margin-top: clamp(36px, 5vw, 64px); display: flex; align-items: center; gap: 22px; flex-wrap: wrap; padding: 26px 30px; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(120deg, var(--surface), transparent 80%); }
+  .official img { width: 64px; height: 64px; border-radius: 50%; }
+  .official div { flex: 1; min-width: 200px; }
+  .official b { display: block; font: 600 1.15rem var(--display); }
+  .official span { color: var(--muted); }
+  .ig { display: inline-flex; align-items: center; gap: 12px; padding: 12px 22px 12px 14px; border-radius: 999px; font-weight: 600; color: #fff; background: linear-gradient(45deg, #f9a825, #ee2a7b 55%, #6228d7); transition: transform .2s, box-shadow .2s; }
+  .ig:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(238,42,123,.7); }
+  .ig .ic { width: 26px; height: 26px; }
+
+  /* Projects ledger */
+  .athena { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px, 5vw, 72px); align-items: center; padding: clamp(28px, 4vw, 56px); border-radius: 28px; border: 1px solid var(--line); background: radial-gradient(600px 300px at 0% 0%, color-mix(in srgb, var(--blue) 22%, transparent), transparent 70%), var(--surface); }
+  .athena h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin: 6px 0 14px; }
+  .athena p { color: var(--muted); }
+  .athena .nums { display: grid; grid-template-columns: repeat(3, auto); gap: 8px 28px; margin-top: 30px; justify-content: start; }
+  .athena .nums b { display: block; font: 600 clamp(1.8rem, 3.4vw, 2.8rem)/1 var(--display); letter-spacing: -0.04em; }
+  .athena .nums span { font-size: 13.5px; color: var(--muted); }
+  .athena .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .athena .shots .zoom { border-radius: 14px; border: 1px solid var(--line); background: #fff; }
+  .athena .shots .zoom:first-child { grid-column: 1 / -1; }
+  .kicker { font-size: 14px; font-weight: 600; color: var(--sky); }
+  .l-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin: clamp(56px, 8vw, 96px) 0 18px; }
+  .l-title h3 { font-size: 1.5rem; }
+  .l-title span { color: var(--muted); font-size: 15px; }
+  .ledger { border-top: 1px solid var(--line); }
+  .lhead, .row { display: grid; grid-template-columns: minmax(150px, 1.25fr) 1fr 1fr 1fr 150px; gap: 22px; align-items: center; }
+  .lhead { padding: 12px 10px; font-size: 13px; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .row { padding: 16px 10px; border-bottom: 1px solid var(--line); transition: background .25s; }
+  .row:hover { background: color-mix(in srgb, var(--blue) 7%, transparent); }
+  .row .ind b { display: block; font-size: 17.5px; line-height: 1.3; }
+  .row .ind span { color: var(--muted); font-size: 14px; }
+  .row .k { display: none; font-size: 12.5px; color: var(--muted); margin-bottom: 2px; }
+  .row .num { font: 600 clamp(1.7rem, 2.6vw, 2.3rem)/1 var(--display); letter-spacing: -0.035em; }
+  .row .cost { font: 600 1.35rem/1.1 var(--display); letter-spacing: -0.02em; color: var(--sky); }
+  .row .val { font-weight: 600; }
+  .row .thumb { border-radius: 10px; border: 1px solid var(--line); background: #fff; aspect-ratio: 16 / 9; }
+  .row .thumb img { height: 100%; object-fit: cover; object-position: 0 0; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .row:hover .thumb img { transform: scale(1.08); }
+  .row .thumb::after { display: none; }
+  @media (max-width: 860px) {
+    .lhead { display: none; }
+    .row { grid-template-columns: 1fr 1fr; gap: 14px 18px; padding: 20px 4px; }
+    .row .ind { grid-column: 1 / -1; }
+    .row .k { display: block; }
+    .row .thumb { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
+    .athena { grid-template-columns: 1fr; }
+    .athena .nums { grid-template-columns: repeat(3, auto); }
+  }
 
   /* Feedbacks */
-  .quotes { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
-  .quote { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
-  .quote p { font-size: 16px; line-height: 1.55; }
-  .quote p::before { content: "\201C"; font-family: var(--font-head); font-size: 40px; line-height: 0; color: var(--accent); display: block; margin-bottom: 14px; padding-top: 14px; }
-  .quote cite { font-style: normal; font-size: 14px; font-weight: 600; }
-  .quote cite small { display: block; color: var(--muted); font-weight: 400; margin-top: 2px; }
-  .note { margin-top: 16px; font-size: 13px; color: var(--muted); }
-  .masonry { columns: 3 300px; column-gap: 16px; }
-  .shot { break-inside: avoid; margin: 0 0 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .shot figcaption { padding: 12px 16px; font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--line); }
-  .shot figcaption b { color: var(--ink); }
+  .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 5vw, 64px) clamp(28px, 6vw, 96px); }
+  .quote { position: relative; padding-top: 22px; }
+  .quote::before { content: ''; position: absolute; top: 0; left: 0; width: 44px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--blue), var(--sky)); }
+  .quote blockquote { margin: 0; font: 500 clamp(1.2rem, 1.9vw, 1.55rem)/1.5 var(--body); letter-spacing: -0.01em; }
+  .quote figcaption { margin-top: 16px; font-weight: 600; }
+  .quote figcaption span { display: block; font-weight: 400; color: var(--muted); font-size: 14.5px; }
+  .note { margin-top: 28px; color: var(--muted); font-size: 14px; }
+  .masonry { columns: 3 280px; column-gap: 18px; }
+  .shot { break-inside: avoid; margin: 0 0 18px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
+  .shot figcaption { padding: 12px 16px 14px; font-size: 14.5px; color: var(--muted); border-top: 1px solid var(--line); }
+  .shot figcaption b { color: var(--text); }
 
   /* Tools */
-  .tool-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
-  .tool-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .tool-card img { width: 100%; height: auto; background: #fff; }
-  .tool-card h4 { font-size: 15px; padding: 14px 18px; border-top: 1px solid var(--line); }
-  .chips.center { margin-top: 28px; }
+  .trays { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .tray { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--surface); }
+  .tray img { background: #fff; width: 100%; }
+  .tray figcaption { padding: 14px 18px; font-weight: 600; font-size: 15px; border-top: 1px solid var(--line); }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+  .pills span { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: 14.5px; font-weight: 500; transition: border-color .2s, color .2s; }
+  .pills span:hover { border-color: var(--blue); color: var(--sky); }
+  @media (max-width: 900px) { .trays { grid-template-columns: 1fr; max-width: 520px; } }
 
   /* Appointment */
-  .appt { padding-bottom: 72px; }
-  .appt-box { background: var(--ink); color: var(--bg); border-radius: 32px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 5vw, 56px); align-items: start; }
-  .appt-box h2 { font-size: clamp(30px, 5vw, 46px); }
-  .appt-box .intro { margin-top: 14px; opacity: .75; font-size: 17px; }
-  .appt-points { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
-  .appt-points li { display: flex; gap: 12px; align-items: flex-start; opacity: .9; font-size: 15px; }
-  .appt-points li::before { content: "✓"; flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: color-mix(in srgb, var(--teal) 30%, transparent); color: var(--teal); font-size: 13px; font-weight: 700; }
-  form.appt-form { background: var(--surface); color: var(--ink); border-radius: 24px; padding: 28px; display: grid; gap: 16px; }
-  .field { display: grid; gap: 6px; }
-  .field label { font-size: 13.5px; font-weight: 600; }
-  .field input { width: 100%; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font: inherit; font-size: 15px; }
-  .field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .appt-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(32px, 7vw, 110px); align-items: start; }
+  .appt-grid .lead { margin-top: 22px; }
+  .flow { margin-top: 36px; display: grid; gap: 0; counter-reset: s; }
+  .flow li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); align-items: center; }
+  .flow li::before { content: counter(s); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--raised); font: 600 14px var(--display); color: var(--sky); }
+  .alt-book { margin-top: 26px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; color: var(--muted); }
+  .slip { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 26px; padding: clamp(24px, 3.4vw, 40px); display: grid; gap: 20px; box-shadow: 0 40px 80px -50px var(--glow); }
+  .slip::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; border-radius: 26px 26px 0 0; background: linear-gradient(90deg, #1470f0, #1fb0ff); }
+  .field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  .field input { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg); color: var(--text); transition: border-color .2s, box-shadow .2s; }
+  .field input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px var(--glow); }
+  .field input::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form-msg { font-size: 14px; padding: 12px 14px; border-radius: 12px; display: none; }
-  .form-msg.show { display: block; }
-  .form-msg.ok { background: color-mix(in srgb, var(--teal) 16%, transparent); color: var(--ink); }
-  .form-msg.err { background: color-mix(in srgb, #e5484d 14%, transparent); color: var(--ink); }
-  .fine { font-size: 12.5px; color: var(--muted); }
-  .btn[disabled] { opacity: .6; cursor: wait; }
+  .fmsg { padding: 13px 16px; border-radius: 14px; font-size: 15px; background: color-mix(in srgb, #ef5a5f 14%, transparent); border: 1px solid color-mix(in srgb, #ef5a5f 55%, transparent); }
+  .fine { font-size: 13.5px; color: var(--muted); }
+  .success { text-align: center; padding: 20px 6px; }
+  .success svg { width: 76px; height: 76px; margin: 0 auto 18px; display: block; }
+  .success circle { fill: none; stroke: var(--blue); stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .8s ease forwards; }
+  .success path { fill: none; stroke: var(--sky); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .6s ease .6s forwards; }
+  .success h3 { font-size: 1.5rem; margin-bottom: 10px; }
+  .success p { color: var(--muted); }
 
-  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
-  footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  footer { border-top: 1px solid var(--line); padding: 44px 0; }
+  .foot { display: flex; align-items: center; gap: 20px 32px; flex-wrap: wrap; justify-content: space-between; }
+  .foot .brand img { width: 40px; height: 40px; }
+  .foot nav { display: flex; gap: 22px; flex-wrap: wrap; color: var(--muted); font-size: 14.5px; }
+  .foot nav a:hover { color: var(--text); }
+  .foot small { color: var(--muted); font-size: 14px; }
 
-  /* Reveal */
-  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-  .js .reveal.in { opacity: 1; transform: none; }
+  /* Lightbox */
+  .lb { position: fixed; inset: 0; z-index: 120; background: rgba(3,6,12,.9); display: flex; align-items: center; justify-content: center; padding: 56px 16px 24px; animation: fade .2s ease forwards; opacity: 0; }
+  .lb figure { max-width: min(1200px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; animation: zoomin .3s cubic-bezier(.2,.8,.2,1); }
+  @keyframes zoomin { from { transform: scale(.94); opacity: 0; } }
+  .lb img { max-width: 100%; max-height: calc(100vh - 150px); width: auto; border-radius: 12px; background: #fff; }
+  .lb figcaption { color: #cfd9ee; font-size: 14.5px; text-align: center; }
+  .lb button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.1); color: #fff; display: grid; place-items: center; }
+
+  /* Chat widget */
+  .chat-btn { position: fixed; right: 22px; bottom: 22px; z-index: 90; width: 64px; height: 64px; border-radius: 50%; border: 0; padding: 0; background: var(--bg); box-shadow: 0 10px 34px -6px rgba(30,143,255,.6), 0 0 0 2px var(--blue); transition: transform .25s; }
+  .chat-btn:hover { transform: scale(1.07); }
+  .chat-btn img { width: 100%; height: 100%; border-radius: 50%; }
+  .chat-btn::before { content: ''; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--sky); animation: pulse 2.4s ease-out 3; opacity: 0; }
+  @keyframes pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.7); opacity: 0; } }
+  .chat-badge { position: absolute; top: -4px; right: -4px; min-width: 22px; height: 22px; border-radius: 11px; background: #ef5a5f; color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; padding: 0 6px; }
+  .chat-hint { position: fixed; right: 96px; bottom: 34px; z-index: 89; background: var(--surface); border: 1px solid var(--line); border-radius: 16px 16px 4px 16px; padding: 11px 16px; font-size: 14.5px; font-weight: 500; box-shadow: 0 14px 40px -12px rgba(0,0,0,.5); max-width: 220px; animation: fade .4s ease forwards; opacity: 0; }
+  .chat { position: fixed; right: 22px; bottom: 100px; z-index: 95; width: min(392px, calc(100vw - 24px)); height: min(640px, calc(100vh - 124px)); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,.65); transform: translateY(18px) scale(.97); opacity: 0; transform-origin: bottom right; transition: transform .3s cubic-bezier(.2,.8,.2,1), opacity .25s; }
+  .chat.open { transform: none; opacity: 1; }
+  .chat-head { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: linear-gradient(135deg, #0d3f9c, #137fe0); color: #fff; }
+  .chat-head img { width: 42px; height: 42px; border-radius: 50%; }
+  .chat-head b { display: block; font: 600 15px var(--display); letter-spacing: -0.01em; }
+  .chat-head small { display: flex; align-items: center; gap: 7px; font-size: 13px; opacity: .92; }
+  .chat-head small i { width: 8px; height: 8px; border-radius: 50%; background: #55e39a; box-shadow: 0 0 0 3px rgba(85,227,154,.3); }
+  .chat-head .x { margin-left: auto; width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; display: grid; place-items: center; }
+  .chat-msgs { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; background: var(--bg); }
+  .m { max-width: 86%; padding: 10px 14px; border-radius: 18px; font-size: 15px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; animation: msgin .3s cubic-bezier(.2,.8,.2,1); }
+  @keyframes msgin { from { transform: translateY(8px); opacity: 0; } }
+  .m a { text-decoration: underline; text-underline-offset: 2px; }
+  .m.ai, .m.admin { align-self: flex-start; background: var(--raised); border-bottom-left-radius: 5px; }
+  .m.admin { background: color-mix(in srgb, var(--blue) 18%, var(--raised)); border: 1px solid color-mix(in srgb, var(--blue) 40%, transparent); }
+  .m.visitor { align-self: flex-end; background: linear-gradient(135deg, #1470f0, #1fb0ff); color: #031024; border-bottom-right-radius: 5px; font-weight: 500; }
+  .m.pending { opacity: .6; }
+  .m.sys { align-self: center; max-width: 94%; background: none; color: var(--muted); font-size: 13px; text-align: center; padding: 4px 8px; }
+  .m .who { display: block; font-size: 12px; font-weight: 700; color: var(--sky); margin-bottom: 3px; }
+  .typing { align-self: flex-start; display: flex; gap: 5px; padding: 14px 16px; background: var(--raised); border-radius: 18px; border-bottom-left-radius: 5px; }
+  .typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: bounce 1.2s infinite ease-in-out; }
+  .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes bounce { 0%, 60%, 100% { transform: none; opacity: .5; } 30% { transform: translateY(-5px); opacity: 1; } }
+  .chat-q { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 12px; background: var(--bg); }
+  .chat-q:empty { display: none; }
+  .chat-q button { padding: 8px 14px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--blue) 55%, transparent); background: none; color: var(--sky); font-size: 14px; font-weight: 600; transition: background .2s; }
+  .chat-q button:hover { background: color-mix(in srgb, var(--blue) 16%, transparent); }
+  .chat-x { display: flex; gap: 8px; padding: 0 16px 12px; background: var(--bg); }
+  .chat-x:empty { display: none; }
+  .chat-x input { flex: 1; min-width: 0; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+  .chat-in { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); background: var(--surface); }
+  .chat-in input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); }
+  .chat-in input:focus { outline: none; border-color: var(--blue); }
+  .chat-in button { width: 46px; height: 46px; border-radius: 50%; border: 0; background: linear-gradient(135deg, #1470f0, #1fb0ff); color: #031024; display: grid; place-items: center; flex: none; }
+  .chat-foot { text-align: center; font-size: 12px; color: var(--muted); padding: 0 12px 10px; background: var(--surface); }
+  @media (max-width: 520px) {
+    .chat { inset: 0; width: 100%; height: 100%; border-radius: 0; border: 0; transform-origin: bottom; }
+    .chat-btn { right: 16px; bottom: 16px; width: 58px; height: 58px; }
+    .chat-hint { right: 84px; bottom: 26px; }
+  }
+
+  @media (max-width: 960px) {
+    .who-grid, .founders, .mv, .contact-grid, .appt-grid, .quotes { grid-template-columns: 1fr; }
+    .mv article, .mv article + article { padding: 40px 0; border-left: 0; }
+    .mv article + article { border-top: 1px solid var(--line); }
+    .what-grid { grid-template-columns: 1fr 1fr; }
+    .founder { grid-template-columns: 96px 1fr; gap: 20px; }
+    .founder .ph { width: 96px; height: 96px; }
+  }
+  @media (max-width: 600px) {
+    .what-grid, .frow { grid-template-columns: 1fr; }
+    .founder { grid-template-columns: 1fr; }
+    .athena .nums { grid-template-columns: 1fr 1fr; }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .js .reveal { opacity: 1; transform: none; transition: none; }
-    .btn, .result { transition: none; }
-  }
-
-  /* Responsive */
-  @media (max-width: 960px) {
-    .menu-btn { display: grid; }
-    .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 16px; background: var(--bg); border-bottom: 1px solid var(--line); font-size: 16px; }
-    .nav-links.open { display: flex; }
-    .nav-links a { padding: 12px 0; border-top: 1px solid var(--line); }
-    .nav-links a:first-child { border-top: 0; }
-    .nav-right .btn { display: none; }
-  }
-  @media (max-width: 860px) {
-    .who-intro, .people, .contacts, .feature, .appt-box { grid-template-columns: 1fr; }
-    .feature { padding: 28px; }
-    .stats { grid-template-columns: 1fr 1fr; margin-top: 48px; }
-  }
-  @media (max-width: 520px) {
-    section { padding: 64px 0; }
-    .hero { padding: 64px 0 48px; }
-    .person, .contact-card { padding: 24px; }
-    .cta-row .btn { flex: 1 1 100%; }
-    .field-row { grid-template-columns: 1fr; }
-    .results { grid-template-columns: 1fr; }
-    form.appt-form { padding: 22px; }
+    *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; transition-duration: .001s !important; }
+    .ticker .track { animation: none; }
+    .hero h1 .wd > span, .bar { transform: none; }
+    .hero .lead, .hero .cta, .arrow-head { opacity: 1; transform: none; }
+    .arrow-path { stroke-dashoffset: 0; }
   }
 </style>
 </head>
 <body>
 
-<header class="site">
-  <div class="container nav">
-    <a href="#top" class="brand" aria-label="Prime Scale home">
-      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2457ff"/><stop offset="1" stop-color="#00b49b"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M8 22V16M14 22V12M20 22V8" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
-      Prime Scale
-    </a>
-    <nav class="nav-links" id="navLinks" aria-label="Main">
+<!-- icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.9 7c0 5.45-4.45 9.88-9.9 9.88zM20.5 3.45A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.55 0 11.9-5.33 11.9-11.9 0-3.17-1.24-6.16-3.47-8.4z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Prime Scale, back to top"><img src="images/logo-112.png" alt="" width="44" height="44"><span>Prime Scale</span></a>
+    <nav class="links" aria-label="Main">
       <a href="#who">Who is Prime Scale</a>
+      <a href="#mission">Mission &amp; Vision</a>
       <a href="#contact">Contact Info</a>
       <a href="#projects">Projects</a>
       <a href="#feedbacks">Feedbacks</a>
       <a href="#tools">Tools We Use</a>
       <a href="#appointment">Set an Appointment</a>
     </nav>
-    <div class="nav-right">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
-      <a href="#appointment" class="btn btn-primary btn-sm">Book a call</a>
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to light mode"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></button>
+      <a class="btn primary sm" href="#appointment" data-track="book">Book a call</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg></button>
     </div>
   </div>
 </header>
+<nav class="menu" id="menu" aria-label="Mobile">
+  <a href="#who">Who is Prime Scale</a><a href="#mission">Mission &amp; Vision</a><a href="#contact">Contact Info</a><a href="#projects">Projects</a><a href="#feedbacks">Feedbacks</a><a href="#tools">Tools We Use</a><a href="#appointment">Set an Appointment</a>
+</nav>
+
+<nav class="rail" id="rail" aria-label="Page progress">
+  <ol>
+    <span class="fill" id="railFill"></span>
+    <li><a href="#top" data-s="top"><i></i><span>Top</span></a></li>
+    <li><a href="#who" data-s="who"><i></i><span>Who is Prime Scale</span></a></li>
+    <li><a href="#mission" data-s="mission"><i></i><span>Mission &amp; Vision</span></a></li>
+    <li><a href="#awards" data-s="awards"><i></i><span>Awards</span></a></li>
+    <li><a href="#contact" data-s="contact"><i></i><span>Contact Info</span></a></li>
+    <li><a href="#projects" data-s="projects"><i></i><span>Projects</span></a></li>
+    <li><a href="#feedbacks" data-s="feedbacks"><i></i><span>Feedbacks</span></a></li>
+    <li><a href="#tools" data-s="tools"><i></i><span>Tools We Use</span></a></li>
+    <li><a href="#appointment" data-s="appointment"><i></i><span>Set an Appointment</span></a></li>
+  </ol>
+</nav>
 
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="pill reveal"><i></i> Facebook · TikTok · Shopee ads</div>
-      <h1 class="reveal">We turn ad spend into <em>messages, bookings and sales.</em></h1>
-      <p class="lead reveal">Prime Scale builds ad campaigns that are organized, measurable and scalable, so your marketing budget keeps working harder.</p>
-      <div class="cta-row reveal">
-        <a href="#projects" class="btn btn-primary">See our results</a>
-        <a href="#appointment" class="btn btn-ghost">Set an appointment</a>
+  <section class="hero" id="hero" data-sec="top">
+    <div class="stage" aria-hidden="true">
+      <svg viewBox="0 0 660 520" preserveAspectRatio="xMaxYMax meet">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fc0ff" stop-opacity=".95"/><stop offset="1" stop-color="#1257e0" stop-opacity=".28"/></linearGradient>
+          <linearGradient id="ag1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1e8fff"/><stop offset="1" stop-color="#9be6ff"/></linearGradient>
+        </defs>
+        <g class="bar" style="--i:0"><rect class="bar-r" x="20" y="390" width="44" height="110" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:1"><rect class="bar-r" x="90" y="340" width="44" height="160" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:2"><rect class="bar-r" x="160" y="360" width="44" height="140" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:3"><rect class="bar-r" x="230" y="285" width="44" height="215" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:4"><rect class="bar-r" x="300" y="305" width="44" height="195" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:5"><rect class="bar-r" x="370" y="215" width="44" height="285" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:6"><rect class="bar-r" x="440" y="238" width="44" height="262" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:7"><rect class="bar-r" x="510" y="135" width="44" height="365" rx="6" fill="url(#bg1)"/></g>
+        <g class="bar" style="--i:8"><rect class="bar-r" x="580" y="70" width="44" height="430" rx="6" fill="url(#bg1)"/></g>
+        <path class="arrow-path" pathLength="1" d="M8 470 C 150 440, 250 380, 340 290 S 520 120, 606 56" fill="none" stroke="url(#ag1)" stroke-width="9" stroke-linecap="round"/>
+        <polygon class="arrow-head" points="633,36 620,69 598,40" fill="#9be6ff" stroke="#9be6ff" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 aria-label="We scale brands. You grow.">
+          <span class="ln" aria-hidden="true"><span class="wd" style="--i:0"><span>We</span></span><span class="wd" style="--i:1"><span>scale</span></span><span class="wd" style="--i:2"><span>brands.</span></span></span>
+          <span class="ln" aria-hidden="true"><span class="wd" style="--i:3"><span>You</span></span><span class="wd" style="--i:4"><span>grow.</span></span></span>
+        </h1>
+        <p class="lead">Prime Scale runs Facebook, Instagram, TikTok and Shopee ads that turn ad spend into messages, bookings and sales. Two founders, hands on every campaign.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects" data-track="results">See our results</a>
+          <a class="btn" href="#appointment" data-track="book">Set an appointment</a>
+        </div>
       </div>
-
-      <div class="stats">
-        <div class="stat reveal"><b>18</b><span>cars sold in one month from ₱18,000 in ad spend</span></div>
-        <div class="stat reveal"><b>10+</b><span>industries advertised, from hotels to schools</span></div>
-        <div class="stat reveal"><b>₱3.94</b><span>cost per conversation on a travel &amp; tours campaign</span></div>
-        <div class="stat reveal"><b>5</b><span>advertiser awards earned</span></div>
+    </div>
+    <div class="wrap" style="position:relative;z-index:2">
+      <div class="proof">
+        <div><b data-count="18">18</b><span>cars sold in one month on ₱18,000 of ad spend</span></div>
+        <div><b data-count="3.94" data-dec="2" data-prefix="₱">₱3.94</b><span>cost per conversation on a travel and tours campaign</span></div>
+        <div><b data-count="10" data-suffix="+">10+</b><span>industries advertised, from schools to hotels</span></div>
+        <div><b data-count="6">6</b><span>awards and recognitions earned by our founders</span></div>
       </div>
     </div>
   </section>
 
+  <div class="ticker" aria-hidden="true"><div class="track"><span>Facebook Ads</span><span>Instagram Ads</span><span>TikTok Ads</span><span>Shopee Ads</span><span>Lead generation</span><span>Sales campaigns</span><span>Landing pages</span><span>Creative coordination</span><span>Reporting and analytics</span><span>We scale brands. You grow.</span><span>Facebook Ads</span><span>Instagram Ads</span><span>TikTok Ads</span><span>Shopee Ads</span><span>Lead generation</span><span>Sales campaigns</span><span>Landing pages</span><span>Creative coordination</span><span>Reporting and analytics</span><span>We scale brands. You grow.</span></div></div>
+
   <!-- WHO IS PRIME SCALE -->
-  <section id="who">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Who is Prime Scale</span>
-        <h2>Two ads specialists. One goal: growth you can measure.</h2>
-      </div>
-
-      <div class="who-intro">
-        <div class="text reveal">
-          <p>Prime Scale was founded by Reymark Dulutan and D'Lanor Romanes, two social media ads specialists who help businesses turn their marketing efforts into organized, measurable and scalable systems.</p>
-          <p>We handle campaign strategy, setup, audience targeting, creative coordination, optimization and performance monitoring across Facebook, TikTok, Shopee and other platforms, and we report back with clear numbers so you always know what your budget is doing.</p>
+  <section class="sec" id="who" data-sec="who">
+    <div class="wrap">
+      <div class="who-grid">
+        <div>
+          <h2>Who is Prime Scale</h2>
+          <p>Prime Scale is a social media ads agency founded by Reymark Dulutan and D'Lanor Romanes. We turn marketing effort into organized, measurable and scalable systems for businesses on Facebook, Instagram, TikTok and Shopee.</p>
+          <p>We handle campaign strategy, setup, audience targeting, creative coordination, optimization and performance monitoring, then report back with clear numbers so you always know what your budget is doing.</p>
         </div>
-        <div class="mission reveal">
-          Our goal is simple: combine effective marketing with efficient operations to help businesses generate better results and grow sustainably.
-          <small>Prime Scale · Founders' mission</small>
+        <div class="medal" aria-hidden="true"><span class="ring r1"></span><span class="ring r2"></span><span class="orb"></span><img src="images/logo.png" alt="" width="640" height="640"></div>
+      </div>
+
+      <div class="founders">
+        <article class="founder">
+          <div class="ph"><img src="images/reymark.jpg" alt="Reymark Dulutan" width="900" height="900" loading="lazy"></div>
+          <div>
+            <h3>Reymark Dulutan</h3>
+            <div class="role">Co-founder and Ads Manager</div>
+            <p>Ads Manager for Facebook, TikTok, Shopee and other social media platforms for over 2 years. I help businesses turn their marketing efforts into organized, measurable and scalable systems.</p>
+            <p>I handle campaign strategy, setup, audience targeting, creative coordination, optimization and performance monitoring.</p>
+            <div class="tags"><span class="tag">Facebook Ads</span><span class="tag">TikTok Ads</span><span class="tag">Shopee Ads</span></div>
+          </div>
+        </article>
+        <article class="founder">
+          <div class="ph"><img src="images/dlanor.jpg" alt="D'Lanor Romanes" width="774" height="800" loading="lazy"></div>
+          <div>
+            <h3>D'Lanor Romanes</h3>
+            <div class="role">Co-founder and Social Media Ads Specialist</div>
+            <p>Social media ads specialist with strengths in Facebook advertising and digital marketing. I manage campaigns that drive business growth through effective strategies.</p>
+            <p>I deliver optimized results with detailed reporting and analysis, and I'm a multi-award-winning advertiser.</p>
+            <div class="tags"><span class="tag">Meta Advertising</span><span class="tag">Digital Marketing</span><span class="tag">Landing Pages</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="what">
+        <h3>What we handle</h3>
+        <div class="what-grid">
+          <div class="what-item"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg><div><b>Strategy and planning</b><span>Campaign structure, audiences and budgets built around your goal.</span></div></div>
+          <div class="what-item"><svg class="ic" aria-hidden="true"><use href="#i-cross"/></svg><div><b>Setup and targeting</b><span>Meta, TikTok and Shopee campaigns set up to reach the right customers.</span></div></div>
+          <div class="what-item"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg><div><b>Creative coordination</b><span>Ad creatives, copy and video edits that fit each platform.</span></div></div>
+          <div class="what-item"><svg class="ic" aria-hidden="true"><use href="#i-layout"/></svg><div><b>Landing pages</b><span>Pages designed to turn clicks into customers.</span></div></div>
+          <div class="what-item"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg><div><b>Optimization</b><span>Ongoing testing, monitoring and budget tuning.</span></div></div>
+          <div class="what-item"><svg class="ic" aria-hidden="true"><use href="#i-bars"/></svg><div><b>Analytics and reporting</b><span>Detailed performance reports you can act on.</span></div></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="people">
-        <article class="person reveal">
-          <div class="person-top">
-            <div class="avatar rd"><img src="images/reymark.jpg" alt="Reymark Dulutan" loading="lazy"></div>
-            <div>
-              <h3>Reymark Dulutan</h3>
-              <div class="role">Co-founder · Ads Manager</div>
-            </div>
-          </div>
-          <p>Ads Manager for Facebook, TikTok, Shopee and other social media platforms for over 2 years. I help businesses turn their marketing efforts into organized, measurable and scalable systems.</p>
-          <p>I handle campaign strategy, setup, audience targeting, creative coordination, optimization and performance monitoring across different platforms.</p>
-          <div class="chips"><span class="chip">Facebook Ads</span><span class="chip">TikTok Ads</span><span class="chip">Shopee Ads</span></div>
+  <!-- MISSION & VISION -->
+  <section class="sec alt" id="mission" data-sec="mission">
+    <div class="wrap">
+      <div class="sec-head"><h2>Mission &amp; Vision</h2></div>
+      <div class="mv">
+        <article>
+          <h3><svg class="ic big-ic draw" viewBox="0 0 24 24" aria-hidden="true"><circle pathLength="1" cx="12" cy="12" r="10"/><circle pathLength="1" cx="12" cy="12" r="6"/><circle pathLength="1" cx="12" cy="12" r="2"/></svg>Our Mission</h3>
+          <p>To turn every advertising opportunity into a pathway for growth by combining strategic thinking, creative execution, and data-driven decisions that connect businesses with the right customers.</p>
         </article>
-
-        <article class="person reveal">
-          <div class="person-top">
-            <div class="avatar dl"><img src="images/dlanor.jpg" alt="D'Lanor Romanes" loading="lazy"></div>
-            <div>
-              <h3>D'Lanor Romanes</h3>
-              <div class="role">Co-founder · Social Media Ads Specialist</div>
-            </div>
-          </div>
-          <p>Social media ads specialist with strengths in Facebook advertising and digital marketing. I manage advertising campaigns that drive business growth through effective strategies.</p>
-          <p>I deliver optimized results with detailed reporting and analysis, and I'm a multi-award-winning advertiser.</p>
-          <div class="chips"><span class="chip">Meta Advertising</span><span class="chip">Digital Marketing</span><span class="chip">Landing Pages</span></div>
+        <article>
+          <h3><svg class="ic big-ic draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle pathLength="1" cx="12" cy="12" r="3"/></svg>Our Vision</h3>
+          <p>To become the growth partner behind businesses that dare to scale—where advertising goes beyond visibility, creating meaningful connections, measurable progress, and lasting business impact.</p>
         </article>
       </div>
+    </div>
+  </section>
 
-      <div class="subhead reveal"><h3>What we do</h3></div>
-      <div class="services">
-        <div class="service reveal"><i>♟</i><div><b>Strategy &amp; planning</b><span>Campaign structure, audiences and budgets</span></div></div>
-        <div class="service reveal"><i>◎</i><div><b>Setup &amp; targeting</b><span>Meta, TikTok and Shopee campaign build and audience targeting</span></div></div>
-        <div class="service reveal"><i>✎</i><div><b>Creative coordination</b><span>Ad creatives, copy and video edits</span></div></div>
-        <div class="service reveal"><i>▣</i><div><b>Landing pages</b><span>Pages designed to turn clicks into customers</span></div></div>
-        <div class="service reveal"><i>⚙</i><div><b>Optimization</b><span>Ongoing testing, monitoring and budget tuning</span></div></div>
-        <div class="service reveal"><i>↗</i><div><b>Analytics &amp; reporting</b><span>Detailed performance reports and insights</span></div></div>
-      </div>
-
-      <div class="subhead reveal"><h3>Awards &amp; recognition</h3><span>D'Lanor Romanes · tap an award to enlarge</span></div>
-      <div class="awards">
-        <article class="award reveal">
-          <button class="zoom" type="button" data-full="images/award-peak-performer.jpg" data-cap="The Peak Performer · Atomic Digital Deals"><img src="images/award-peak-performer.jpg" alt="The Peak Performer certificate awarded to D'Lanor Romanes" loading="lazy"></button>
-          <div class="cap"><h4>The Peak Performer</h4><p>Atomic Digital Deals · Dec 2024. Top advertiser of the year.</p></div>
-        </article>
-        <article class="award reveal">
-          <button class="zoom" type="button" data-full="images/award-top-advertiser.jpg" data-cap="Top Advertiser of the Month · Atomic Digital Deals"><img src="images/award-top-advertiser.jpg" alt="Top Advertiser certificate awarded to D'Lanor Romanes" loading="lazy"></button>
-          <div class="cap"><h4>Top Advertiser of the Month</h4><p>Atomic Digital Deals · June 2024.</p></div>
-        </article>
-        <article class="award reveal">
-          <button class="zoom" type="button" data-full="images/award-revival.jpg" data-cap="Revival Award"><img src="images/award-revival.jpg" alt="Revival Award certificate awarded to D'Lanor Romanes" loading="lazy"></button>
-          <div class="cap"><h4>Revival Award</h4><p>For helping bring performance back on track with a new product launch.</p></div>
-        </article>
-        <article class="award reveal">
-          <button class="zoom" type="button" data-full="images/award-dav-boho.jpg" data-cap="DAV – Boho Pioneer Luminary Award · Dec 2023"><img src="images/award-dav-boho.jpg" alt="DAV Boho Pioneer Luminary Award certificate" loading="lazy"></button>
-          <div class="cap"><h4>DAV – Boho Pioneer Luminary</h4><p>Dec 2023. Advertiser with the highest data value for the year.</p></div>
-        </article>
-        <article class="award reveal">
-          <button class="zoom" type="button" data-full="images/award-mt-kalatungan.jpg" data-cap="Mt. Kalatungan Award · TopYugo"><img src="images/award-mt-kalatungan.jpg" alt="Mt. Kalatungan Award certificate from TopYugo" loading="lazy"></button>
-          <div class="cap"><h4>Mt. Kalatungan Award</h4><p>TopYugo. 50K DAV average for a month at a max 20% ME average.</p></div>
-        </article>
-      </div>
+  <!-- AWARDS -->
+  <section class="sec" id="awards" data-sec="awards">
+    <div class="wrap">
+      <div class="sec-head"><h2>Awards &amp; recognition</h2><p class="lead">Certificates earned by our founders. Click any certificate to read it in full.</p></div>
+      <div class="gallery"><figure class="award"><button class="zoom" type="button" data-full="images/award-employee-of-month.jpg" data-cap="Employee of the Month · ProvideTech · May 2026. Awarded to Reymark B. Dulutan, Ads Manager."><img src="images/award-employee-of-month.jpg" alt="Employee of the Month certificate awarded to Reymark B. Dulutan, Ads Manager, May 2026" loading="lazy"></button><figcaption><b>Employee of the Month</b><span>ProvideTech · May 2026. Awarded to Reymark B. Dulutan, Ads Manager.</span></figcaption></figure><figure class="award"><button class="zoom" type="button" data-full="images/award-peak-performer.jpg" data-cap="The Peak Performer · Atomic Digital Deals · Dec 2024. Top advertiser of the year. D&#x27;Lanor Romanes."><img src="images/award-peak-performer.jpg" alt="The Peak Performer certificate awarded to D&#x27;Lanor Romanes" loading="lazy"></button><figcaption><b>The Peak Performer</b><span>Atomic Digital Deals · Dec 2024. Top advertiser of the year. D&#x27;Lanor Romanes.</span></figcaption></figure><figure class="award"><button class="zoom" type="button" data-full="images/award-top-advertiser.jpg" data-cap="Top Advertiser of the Month · Atomic Digital Deals · June 2024. D&#x27;Lanor Romanes."><img src="images/award-top-advertiser.jpg" alt="Top Advertiser certificate awarded to D&#x27;Lanor Romanes" loading="lazy"></button><figcaption><b>Top Advertiser of the Month</b><span>Atomic Digital Deals · June 2024. D&#x27;Lanor Romanes.</span></figcaption></figure><figure class="award"><button class="zoom" type="button" data-full="images/award-revival.jpg" data-cap="Revival Award · For helping bring performance back on track with a new product launch."><img src="images/award-revival.jpg" alt="Revival Award certificate awarded to D&#x27;Lanor Romanes" loading="lazy"></button><figcaption><b>Revival Award</b><span>For helping bring performance back on track with a new product launch.</span></figcaption></figure><figure class="award"><button class="zoom" type="button" data-full="images/award-dav-boho.jpg" data-cap="DAV – Boho Pioneer Luminary · Dec 2023. Advertiser with the highest data value for the year."><img src="images/award-dav-boho.jpg" alt="DAV Boho Pioneer Luminary Award certificate" loading="lazy"></button><figcaption><b>DAV – Boho Pioneer Luminary</b><span>Dec 2023. Advertiser with the highest data value for the year.</span></figcaption></figure><figure class="award"><button class="zoom" type="button" data-full="images/award-mt-kalatungan.jpg" data-cap="Mt. Kalatungan Award · TopYugo. 50K DAV average for a month at a max 20% ME average."><img src="images/award-mt-kalatungan.jpg" alt="Mt. Kalatungan Award certificate from TopYugo" loading="lazy"></button><figcaption><b>Mt. Kalatungan Award</b><span>TopYugo. 50K DAV average for a month at a max 20% ME average.</span></figcaption></figure></div>
     </div>
   </section>
 
   <!-- CONTACT INFO -->
-  <section id="contact" style="padding-top:24px">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Contact Info</span>
-        <h2>Reach the founders directly.</h2>
-        <p>Message or call either of us, or skip ahead and set an appointment below.</p>
+  <section class="sec alt" id="contact" data-sec="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>Contact Info</h2><p class="lead">Message or call either founder directly. WhatsApp uses the same number as the phone.</p></div>
+      <div class="contact-grid">
+        <div class="pc">
+          <h3>Reymark Dulutan</h3><div class="role">Co-founder and Ads Manager</div>
+          <a class="clink" href="mailto:reymarkbdulutan@gmail.com" data-track="email-reymark"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span><span><small>Email</small><b>reymarkbdulutan@gmail.com</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="clink" href="tel:+639912970369" data-track="phone-reymark"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span><small>Phone</small><b>+63 991 297 0369</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="clink wa" href="https://wa.me/639912970369" target="_blank" rel="noopener" data-track="whatsapp-reymark"><span class="cic"><svg class="ic fill" aria-hidden="true"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b>+63 991 297 0369</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="clink fb" href="https://www.facebook.com/reymark.dulutan/" target="_blank" rel="noopener" data-track="facebook-reymark"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-fb"/></svg></span><span><small>Facebook</small><b>Reymark Dulutan</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+        </div>
+        <div class="pc">
+          <h3>D'Lanor Romanes</h3><div class="role">Co-founder and Social Media Ads Specialist</div>
+          <a class="clink" href="mailto:dlanorromanes15@gmail.com" data-track="email-dlanor"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span><span><small>Email</small><b>dlanorromanes15@gmail.com</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="clink" href="tel:+639493295303" data-track="phone-dlanor"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span><small>Phone</small><b>0949 329 5303</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="clink wa" href="https://wa.me/639493295303" target="_blank" rel="noopener" data-track="whatsapp-dlanor"><span class="cic"><svg class="ic fill" aria-hidden="true"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b>0949 329 5303</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+          <a class="clink fb" href="https://www.facebook.com/dlanor.romanes.2024" target="_blank" rel="noopener" data-track="facebook-dlanor"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-fb"/></svg></span><span><small>Facebook</small><b>D'Lanor Romanes</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
+        </div>
       </div>
-      <div class="contacts">
-        <div class="contact-card reveal">
-          <h3>Reymark Dulutan</h3>
-          <div class="role">Co-founder · Ads Manager</div>
-          <a class="line" href="mailto:reymarkbdulutan@gmail.com"><small>Email</small>reymarkbdulutan@gmail.com</a>
-          <a class="line" href="tel:+639912970369"><small>Phone</small>+63 991 297 0369</a>
-        </div>
-        <div class="contact-card reveal">
-          <h3>D'Lanor Romanes</h3>
-          <div class="role">Co-founder · Social Media Ads Specialist</div>
-          <a class="line" href="mailto:dlanorromanes15@gmail.com"><small>Email</small>dlanorromanes15@gmail.com</a>
-          <a class="line" href="tel:+639493295303"><small>Phone</small>0949 329 5303</a>
-        </div>
+      <div class="official">
+        <img src="images/logo-112.png" alt="" width="64" height="64">
+        <div><b>Prime Scale on Instagram</b><span>Follow @primescale.19 for campaigns and updates.</span></div>
+        <a class="ig" href="https://www.instagram.com/primescale.19/" target="_blank" rel="noopener" data-track="instagram"><svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg>@primescale.19</a>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Projects</span>
-        <h2>Real campaigns. Real numbers.</h2>
-        <p>Screenshots straight from Meta Ads Manager. Most campaigns are click-to-message ads, so a "conversation" means a potential customer messaging the business. Tap any screenshot to enlarge it.</p>
-      </div>
+  <section class="sec" id="projects" data-sec="projects">
+    <div class="wrap">
+      <div class="sec-head"><h2>Projects</h2><p class="lead">Real campaigns, straight from Meta Ads Manager. Most are click-to-message ads, so a conversation means a potential customer messaged the business. Results are from past campaigns and are not guarantees.</p></div>
 
-      <article class="feature reveal">
+      <article class="athena">
         <div>
-          <span class="tag">Featured case study</span>
+          <span class="kicker">Featured case study</span>
           <h3>Athena's Car Trading</h3>
-          <p>Facebook Ads managed from February to the present. June was our most successful month: we sold a total of 18 cars in just a month, on a small budget.</p>
-          <div class="feature-nums">
-            <div class="fnum"><b>18</b><span>cars sold in June</span></div>
-            <div class="fnum"><b>₱18K</b><span>total ad spend for the month</span></div>
-            <div class="fnum wide"><b>≈ ₱1,000</b><span>of ad spend per car sold</span></div>
+          <p>Facebook Ads managed from February to the present. June was our most successful month: we sold 18 cars on a small budget.</p>
+          <div class="nums">
+            <div><b data-count="18">18</b><span>cars sold in June</span></div>
+            <div><b data-count="18" data-prefix="₱" data-suffix="K">₱18K</b><span>ad spend that month</span></div>
+            <div><b>≈ ₱1,000</b><span>ad spend per car</span></div>
           </div>
         </div>
-        <div class="feature-media">
-          <button class="zoom" type="button" data-full="images/athena-sold.jpg" data-cap="Athena's Car Trading · 'Just Sold' post"><img src="images/athena-sold.jpg" alt="Athena's Car Trading Facebook post showing a collage of sold cars" loading="lazy"></button>
-          <div class="row">
-            <button class="zoom" type="button" data-full="images/athena-ads-1.jpg" data-cap="Athena's Car Trading · campaigns, June 2026"><img src="images/athena-ads-1.jpg" alt="Ads Manager campaigns for Athena's Car Trading, June 2026" loading="lazy"></button>
-            <button class="zoom" type="button" data-full="images/athena-ads-2.jpg" data-cap="Athena's Car Trading · results and spend, June 2026"><img src="images/athena-ads-2.jpg" alt="Ads Manager results and amount spent for Athena's Car Trading, June 2026" loading="lazy"></button>
-          </div>
-        </div>
+        <div class="shots"><button class="zoom" type="button" data-full="images/athena-sold.jpg" data-cap="Athena&#x27;s Car Trading · &#x27;Just Sold&#x27; post"><img src="images/athena-sold.jpg" alt="Athena&#x27;s Car Trading Facebook post showing a collage of sold cars" loading="lazy"></button><button class="zoom" type="button" data-full="images/athena-ads-1.jpg" data-cap="Athena&#x27;s Car Trading · campaigns, June 2026"><img src="images/athena-ads-1.jpg" alt="Ads Manager campaigns for Athena&#x27;s Car Trading, June 2026" loading="lazy"></button><button class="zoom" type="button" data-full="images/athena-ads-2.jpg" data-cap="Athena&#x27;s Car Trading · results and spend, June 2026"><img src="images/athena-ads-2.jpg" alt="Ads Manager results and amount spent for Athena&#x27;s Car Trading, June 2026" loading="lazy"></button></div>
       </article>
 
-      <div class="subhead reveal">
-        <h3>Lead generation by industry</h3>
-        <span>Reymark Dulutan · Facebook click-to-message campaigns</span>
-      </div>
-      <div class="results">
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-school-enrolment.jpg" data-cap="School enrolment · Mar 1 – Jun 30, 2026"><img src="images/result-school-enrolment.jpg" alt="Performance overview for a school enrolment campaign: 2,393 messaging conversations at ₱6.70 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">School enrolment</span><span class="when">Mar 1 – Jun 30, 2026</span></div>
-            <div class="big">2,393</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱6.70</dd></div><div><dt>Amount spent</dt><dd>₱16,023.27</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-hotel-resort.jpg" data-cap="Hotel & resort · Jul 1 – Sep 19, 2026"><img src="images/result-hotel-resort.jpg" alt="Performance overview for a hotel and resort campaign: 2,022 messaging conversations at ₱5.95 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Hotel &amp; resort</span><span class="when">Jul 1 – Sep 19, 2026</span></div>
-            <div class="big">2,022</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱5.95</dd></div><div><dt>Amount spent</dt><dd>₱12,030.97</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-travel-tours.jpg" data-cap="Travel & tours · Feb 23 – Mar 12, 2026"><img src="images/result-travel-tours.jpg" alt="Performance overview for a travel and tours campaign: 938 messaging conversations at ₱3.94 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Travel &amp; tours</span><span class="when">Feb 23 – Mar 12, 2026</span></div>
-            <div class="big">938</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱3.94</dd></div><div><dt>Reach</dt><dd>71,634</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-pet-grooming.jpg" data-cap="Pet grooming · Mar 1 – 31, 2026"><img src="images/result-pet-grooming.jpg" alt="Performance overview for a pet grooming campaign: 407 messaging conversations at ₱7.42 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Pet grooming</span><span class="when">Mar 2026</span></div>
-            <div class="big">407</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱7.42</dd></div><div><dt>Amount spent</dt><dd>₱3,019.26</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-salon.jpg" data-cap="Salon"><img src="images/result-salon.jpg" alt="Performance overview for a salon campaign: 391 messaging conversations at ₱7.17 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Salon</span><span class="when">Max date range</span></div>
-            <div class="big">391</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱7.17</dd></div><div><dt>Amount spent</dt><dd>₱2,801.84</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-medical-supplies.jpg" data-cap="Medical supplies · Feb 5 – 19"><img src="images/result-medical-supplies.jpg" alt="Performance overview for a medical supplies campaign: 297 messaging conversations at ₱8.50 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Medical supplies</span><span class="when">Feb 5 – 19</span></div>
-            <div class="big">297</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱8.50</dd></div><div><dt>Reach</dt><dd>15,189</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-wifi-vendo.jpg" data-cap="WiFi vendo machine · Feb 2 – 9, 2026"><img src="images/result-wifi-vendo.jpg" alt="Performance overview for a WiFi vendo machine campaign: 233 messaging conversations at ₱5.02 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">WiFi vendo machine</span><span class="when">Feb 2 – 9, 2026</span></div>
-            <div class="big">233</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱5.02</dd></div><div><dt>Reach</dt><dd>7,247</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-garden-set.jpg" data-cap="Garden set"><img src="images/result-garden-set.jpg" alt="Performance overview for a garden set campaign: 207 messaging conversations at ₱5.69 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Garden set</span><span class="when">Max date range</span></div>
-            <div class="big">207</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱5.69</dd></div><div><dt>Amount spent</dt><dd>₱1,177.31</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-food-lomi.jpg" data-cap="Food (lomi)"><img src="images/result-food-lomi.jpg" alt="Performance overview for a lomi food campaign: 185 messaging conversations at ₱6.45 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Food (lomi)</span><span class="when">Max date range</span></div>
-            <div class="big">185</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱6.45</dd></div><div><dt>Amount spent</dt><dd>₱1,193.41</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-salon-spa.jpg" data-cap="Salon & spa · Nov 25 – Dec 1"><img src="images/result-salon-spa.jpg" alt="Performance overview for a salon and spa campaign: 181 messaging conversations at ₱7.18 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Salon &amp; spa</span><span class="when">Nov 25 – Dec 1</span></div>
-            <div class="big">181</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱7.18</dd></div><div><dt>Reach</dt><dd>6,296</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-logistics.jpg" data-cap="Logistics · Dec 9 – 16"><img src="images/result-logistics.jpg" alt="Performance overview for a logistics campaign: 131 messaging conversations at ₱10.28 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Logistics</span><span class="when">Dec 9 – 16</span></div>
-            <div class="big">131</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱10.28</dd></div><div><dt>Reach</dt><dd>8,360</dd></div></dl>
-          </div>
-        </article>
-
+      <div class="l-title"><h3>Lead generation by industry</h3><span>Reymark Dulutan. Facebook click-to-message campaigns.</span></div>
+      <div class="ledger">
+        <div class="lhead" aria-hidden="true"><span>Industry</span><span>Conversations</span><span>Cost per conversation</span><span>Spend or reach</span><span>Screenshot</span></div>
+        <div class="row"><div class="ind"><b>School enrolment</b><span>Mar 1 – Jun 30, 2026</span></div><div><div class="k">Conversations</div><div class="num">2,393</div></div><div><div class="k">Cost each</div><div class="cost">₱6.70</div></div><div><div class="k">Amount spent</div><div class="val">₱16,023.27</div></div><button class="zoom thumb" type="button" data-full="images/result-school-enrolment.jpg" data-cap="School enrolment · Mar 1 – Jun 30, 2026"><img src="images/result-school-enrolment.jpg" alt="Performance overview for a school enrolment campaign: 2,393 messaging conversations at ₱6.70 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Hotel &amp; resort</b><span>Jul 1 – Sep 19, 2026</span></div><div><div class="k">Conversations</div><div class="num">2,022</div></div><div><div class="k">Cost each</div><div class="cost">₱5.95</div></div><div><div class="k">Amount spent</div><div class="val">₱12,030.97</div></div><button class="zoom thumb" type="button" data-full="images/result-hotel-resort.jpg" data-cap="Hotel &amp; resort · Jul 1 – Sep 19, 2026"><img src="images/result-hotel-resort.jpg" alt="Performance overview for a hotel &amp; resort campaign: 2,022 messaging conversations at ₱5.95 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Travel &amp; tours</b><span>Feb 23 – Mar 12, 2026</span></div><div><div class="k">Conversations</div><div class="num">938</div></div><div><div class="k">Cost each</div><div class="cost">₱3.94</div></div><div><div class="k">Reach</div><div class="val">71,634</div></div><button class="zoom thumb" type="button" data-full="images/result-travel-tours.jpg" data-cap="Travel &amp; tours · Feb 23 – Mar 12, 2026"><img src="images/result-travel-tours.jpg" alt="Performance overview for a travel &amp; tours campaign: 938 messaging conversations at ₱3.94 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Pet grooming</b><span>Mar 2026</span></div><div><div class="k">Conversations</div><div class="num">407</div></div><div><div class="k">Cost each</div><div class="cost">₱7.42</div></div><div><div class="k">Amount spent</div><div class="val">₱3,019.26</div></div><button class="zoom thumb" type="button" data-full="images/result-pet-grooming.jpg" data-cap="Pet grooming · Mar 2026"><img src="images/result-pet-grooming.jpg" alt="Performance overview for a pet grooming campaign: 407 messaging conversations at ₱7.42 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Salon</b><span>Max date range</span></div><div><div class="k">Conversations</div><div class="num">391</div></div><div><div class="k">Cost each</div><div class="cost">₱7.17</div></div><div><div class="k">Amount spent</div><div class="val">₱2,801.84</div></div><button class="zoom thumb" type="button" data-full="images/result-salon.jpg" data-cap="Salon · Max date range"><img src="images/result-salon.jpg" alt="Performance overview for a salon campaign: 391 messaging conversations at ₱7.17 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Medical supplies</b><span>Feb 5 – 19</span></div><div><div class="k">Conversations</div><div class="num">297</div></div><div><div class="k">Cost each</div><div class="cost">₱8.50</div></div><div><div class="k">Reach</div><div class="val">15,189</div></div><button class="zoom thumb" type="button" data-full="images/result-medical-supplies.jpg" data-cap="Medical supplies · Feb 5 – 19"><img src="images/result-medical-supplies.jpg" alt="Performance overview for a medical supplies campaign: 297 messaging conversations at ₱8.50 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>WiFi vendo machine</b><span>Feb 2 – 9, 2026</span></div><div><div class="k">Conversations</div><div class="num">233</div></div><div><div class="k">Cost each</div><div class="cost">₱5.02</div></div><div><div class="k">Reach</div><div class="val">7,247</div></div><button class="zoom thumb" type="button" data-full="images/result-wifi-vendo.jpg" data-cap="WiFi vendo machine · Feb 2 – 9, 2026"><img src="images/result-wifi-vendo.jpg" alt="Performance overview for a wifi vendo machine campaign: 233 messaging conversations at ₱5.02 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Garden set</b><span>Max date range</span></div><div><div class="k">Conversations</div><div class="num">207</div></div><div><div class="k">Cost each</div><div class="cost">₱5.69</div></div><div><div class="k">Amount spent</div><div class="val">₱1,177.31</div></div><button class="zoom thumb" type="button" data-full="images/result-garden-set.jpg" data-cap="Garden set · Max date range"><img src="images/result-garden-set.jpg" alt="Performance overview for a garden set campaign: 207 messaging conversations at ₱5.69 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Food (lomi)</b><span>Max date range</span></div><div><div class="k">Conversations</div><div class="num">185</div></div><div><div class="k">Cost each</div><div class="cost">₱6.45</div></div><div><div class="k">Amount spent</div><div class="val">₱1,193.41</div></div><button class="zoom thumb" type="button" data-full="images/result-food-lomi.jpg" data-cap="Food (lomi) · Max date range"><img src="images/result-food-lomi.jpg" alt="Performance overview for a food (lomi) campaign: 185 messaging conversations at ₱6.45 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Salon &amp; spa</b><span>Nov 25 – Dec 1</span></div><div><div class="k">Conversations</div><div class="num">181</div></div><div><div class="k">Cost each</div><div class="cost">₱7.18</div></div><div><div class="k">Reach</div><div class="val">6,296</div></div><button class="zoom thumb" type="button" data-full="images/result-salon-spa.jpg" data-cap="Salon &amp; spa · Nov 25 – Dec 1"><img src="images/result-salon-spa.jpg" alt="Performance overview for a salon &amp; spa campaign: 181 messaging conversations at ₱7.18 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Logistics</b><span>Dec 9 – 16</span></div><div><div class="k">Conversations</div><div class="num">131</div></div><div><div class="k">Cost each</div><div class="cost">₱10.28</div></div><div><div class="k">Reach</div><div class="val">8,360</div></div><button class="zoom thumb" type="button" data-full="images/result-logistics.jpg" data-cap="Logistics · Dec 9 – 16"><img src="images/result-logistics.jpg" alt="Performance overview for a logistics campaign: 131 messaging conversations at ₱10.28 each" loading="lazy"></button></div>
       </div>
 
-      <div class="subhead reveal">
-        <h3>Sales &amp; conversion campaigns</h3>
-        <span>D'Lanor Romanes · Meta Ads Manager</span>
-      </div>
-      <div class="results">
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/sales-ecommerce-adsets.jpg" data-cap="E-commerce · results from 4 ad sets"><img src="images/sales-ecommerce-adsets.jpg" alt="Ads Manager ad sets showing 261 website purchases at ₱114.83 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">E-commerce · 4 ad sets</span><span class="when">Website purchases</span></div>
-            <div class="big">261</div><div class="label">website purchases</div>
-            <dl><div><dt>Cost per purchase</dt><dd class="good">₱114.83</dd></div><div><dt>Amount spent</dt><dd>₱29,971.34</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/sales-new-sales-adset.jpg" data-cap="New sales ad set · Jul 28, 2024"><img src="images/sales-new-sales-adset.jpg" alt="New sales ad set with 20 website purchases at ₱102.72 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">New sales ad set</span><span class="when">Jul 28, 2024</span></div>
-            <div class="big">20</div><div class="label">website purchases</div>
-            <dl><div><dt>Cost per purchase</dt><dd class="good">₱102.72</dd></div><div><dt>Amount spent</dt><dd>₱2,054.38</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/sales-two-campaigns.jpg" data-cap="Results from 2 campaigns"><img src="images/sales-two-campaigns.jpg" alt="Two campaigns with 15 website purchases at ₱137.37 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">2 campaigns</span><span class="when">Website purchases</span></div>
-            <div class="big">15</div><div class="label">website purchases</div>
-            <dl><div><dt>Cost per purchase</dt><dd class="good">₱137.37</dd></div><div><dt>Reach</dt><dd>6,341</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/sales-ten-campaigns.jpg" data-cap="Results from 10 campaigns · Aug 2025"><img src="images/sales-ten-campaigns.jpg" alt="Ten campaigns with 25 website purchases at ₱198.75 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">10 campaigns</span><span class="when">Aug 2025</span></div>
-            <div class="big">25</div><div class="label">website purchases</div>
-            <dl><div><dt>Cost per purchase</dt><dd class="good">₱198.75</dd></div><div><dt>Amount spent</dt><dd>₱4,968.72</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-messaging-789.jpg" data-cap="Messaging campaign · March"><img src="images/result-messaging-789.jpg" alt="Performance overview: 789 messaging conversations at ₱6.33 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Messaging campaign</span><span class="when">Mar 1 – 13</span></div>
-            <div class="big">789</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱6.33</dd></div><div><dt>Amount spent</dt><dd>₱4,991.18</dd></div></dl>
-          </div>
-        </article>
-
-        <article class="result reveal">
-          <button class="zoom" type="button" data-full="images/result-messaging-346.jpg" data-cap="Messaging campaign · Dec 2025"><img src="images/result-messaging-346.jpg" alt="Performance overview: 346 messaging conversations at ₱4.02 each" loading="lazy"></button>
-          <div class="result-body">
-            <div class="result-top"><span class="tag">Messaging campaign</span><span class="when">Dec 2025</span></div>
-            <div class="big">346</div><div class="label">messaging conversations</div>
-            <dl><div><dt>Cost per conversation</dt><dd class="good">₱4.02</dd></div><div><dt>Reach</dt><dd>13,041</dd></div></dl>
-          </div>
-        </article>
-
+      <div class="l-title"><h3>Sales and purchase campaigns</h3><span>D'Lanor Romanes. Meta Ads Manager.</span></div>
+      <div class="ledger">
+        <div class="lhead" aria-hidden="true"><span>Campaign</span><span>Results</span><span>Cost per result</span><span>Spend or reach</span><span>Screenshot</span></div>
+        <div class="row"><div class="ind"><b>E-commerce</b><span>4 ad sets · Jun 7, 2023 – Jul 7, 2026</span></div><div><div class="k">Website purchases</div><div class="num">261</div></div><div><div class="k">Cost each</div><div class="cost">₱114.83</div></div><div><div class="k">Amount spent</div><div class="val">₱29,971.34</div></div><button class="zoom thumb" type="button" data-full="images/sales-ecommerce-adsets.jpg" data-cap="E-commerce · 4 ad sets · Jun 7, 2023 – Jul 7, 2026"><img src="images/sales-ecommerce-adsets.jpg" alt="Ads Manager ad sets showing 261 website purchases at ₱114.83 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>New sales ad set</b><span>Jul 28, 2024</span></div><div><div class="k">Website purchases</div><div class="num">20</div></div><div><div class="k">Cost each</div><div class="cost">₱102.72</div></div><div><div class="k">Amount spent</div><div class="val">₱2,054.38</div></div><button class="zoom thumb" type="button" data-full="images/sales-new-sales-adset.jpg" data-cap="New sales ad set · Jul 28, 2024"><img src="images/sales-new-sales-adset.jpg" alt="New sales ad set with 20 website purchases at ₱102.72 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>2 campaigns</b><span>Website purchases</span></div><div><div class="k">Website purchases</div><div class="num">15</div></div><div><div class="k">Cost each</div><div class="cost">₱137.37</div></div><div><div class="k">Reach</div><div class="val">6,341</div></div><button class="zoom thumb" type="button" data-full="images/sales-two-campaigns.jpg" data-cap="2 campaigns · Website purchases"><img src="images/sales-two-campaigns.jpg" alt="Two campaigns with 15 website purchases at ₱137.37 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>10 campaigns</b><span>Aug 17, 2025</span></div><div><div class="k">Website purchases</div><div class="num">25</div></div><div><div class="k">Cost each</div><div class="cost">₱198.75</div></div><div><div class="k">Amount spent</div><div class="val">₱4,968.72</div></div><button class="zoom thumb" type="button" data-full="images/sales-ten-campaigns.jpg" data-cap="10 campaigns · Aug 17, 2025"><img src="images/sales-ten-campaigns.jpg" alt="Ten campaigns with 25 website purchases at ₱198.75 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Messaging campaign</b><span>Mar 1 – 13</span></div><div><div class="k">Conversations</div><div class="num">789</div></div><div><div class="k">Cost each</div><div class="cost">₱6.33</div></div><div><div class="k">Amount spent</div><div class="val">₱4,991.18</div></div><button class="zoom thumb" type="button" data-full="images/result-messaging-789.jpg" data-cap="Messaging campaign · Mar 1 – 13"><img src="images/result-messaging-789.jpg" alt="Performance overview: 789 messaging conversations at ₱6.33 each" loading="lazy"></button></div><div class="row"><div class="ind"><b>Messaging campaign</b><span>Dec 17, 2025 – Jan 1, 2026</span></div><div><div class="k">Conversations</div><div class="num">346</div></div><div><div class="k">Cost each</div><div class="cost">₱4.02</div></div><div><div class="k">Reach</div><div class="val">13,041</div></div><button class="zoom thumb" type="button" data-full="images/result-messaging-346.jpg" data-cap="Messaging campaign · Dec 17, 2025 – Jan 1, 2026"><img src="images/result-messaging-346.jpg" alt="Performance overview: 346 messaging conversations at ₱4.02 each" loading="lazy"></button></div>
       </div>
     </div>
   </section>
 
   <!-- FEEDBACKS -->
-  <section id="feedbacks">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Feedbacks</span>
-        <h2>What our clients say.</h2>
-        <p>Straight from our client chats: more inquiries, closed deals and renewals.</p>
-      </div>
-
+  <section class="sec alt" id="feedbacks" data-sec="feedbacks">
+    <div class="wrap">
+      <div class="sec-head"><h2>Feedbacks</h2><p class="lead">What clients say once their ads are live, straight from our chats.</p></div>
       <div class="quotes">
-        <figure class="quote reveal">
-          <p>Our ads are really good. More inquiries and we're closing deals. Thank you so much. I'm renewing on the 11th.</p>
-          <cite>Sha<small>Client · renewing</small></cite>
-        </figure>
-        <figure class="quote reveal">
-          <p>We have no concerns. Everything is okay, and we're full of trips every day.</p>
-          <cite>Kc<small>Kc Hauling</small></cite>
-        </figure>
-        <figure class="quote reveal">
-          <p>So many inquiries. Two of them said they'll likely avail, and one is calling today.</p>
-          <cite>Everlyn<small>Client</small></cite>
-        </figure>
-        <figure class="quote reveal">
-          <p>Great, I liked it. After this I'll upgrade, then have my other account done too.</p>
-          <cite>Ronel<small>Client · upgrading</small></cite>
-        </figure>
+        <figure class="quote"><blockquote>Our ads are really good. More inquiries and we're closing deals. Thank you so much. I'm renewing on the 11th.</blockquote><figcaption>Sha<span>Client, renewing</span></figcaption></figure>
+        <figure class="quote"><blockquote>We have no concerns. Everything is okay, and we're full of trips every day.</blockquote><figcaption>Kc<span>Kc Hauling</span></figcaption></figure>
+        <figure class="quote"><blockquote>So many inquiries. Two of them said they'll likely avail, and one is calling today.</blockquote><figcaption>Everlyn<span>Client</span></figcaption></figure>
+        <figure class="quote"><blockquote>Great, I liked it. After this I'll upgrade, then have my other account done too.</blockquote><figcaption>Ronel<span>Client, upgrading</span></figcaption></figure>
       </div>
-      <p class="note">Client messages were originally in Filipino and have been translated to English.</p>
-
-      <div class="subhead reveal"><h3>The original chats</h3><span>Tap a screenshot to enlarge</span></div>
-      <div class="masonry">
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-sha.jpg" data-cap="Sha · renewing"><img src="images/feedback-sha.jpg" alt="Chat screenshot: client Sha says the ads bring more inquiries and closed deals and will renew" loading="lazy"></button>
-          <figcaption><b>Sha</b> · more inquiries, closing deals, renewing</figcaption>
-        </figure>
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-kc-hauling.jpg" data-cap="Kc Hauling · fully booked"><img src="images/feedback-kc-hauling.jpg" alt="Chat screenshot: Kc Hauling reports no concerns and trips every day" loading="lazy"></button>
-          <figcaption><b>Kc Hauling</b> · full of trips every day</figcaption>
-        </figure>
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-closed-client.jpg" data-cap="Edrief · another client closed"><img src="images/feedback-closed-client.jpg" alt="Chat screenshot: client reports another client closed from the ad" loading="lazy"></button>
-          <figcaption><b>Edrief</b> · another client closed from the ad</figcaption>
-        </figure>
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-everlyn.jpg" data-cap="Everlyn · many inquiries"><img src="images/feedback-everlyn.jpg" alt="Chat screenshot: client Everlyn reports many inquiries" loading="lazy"></button>
-          <figcaption><b>Everlyn</b> · many inquiries, possible clients</figcaption>
-        </figure>
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-ronel.jpg" data-cap="Ronel · upgrading"><img src="images/feedback-ronel.jpg" alt="Chat screenshot: client Ronel is happy and plans to upgrade" loading="lazy"></button>
-          <figcaption><b>Ronel</b> · happy, upgrading</figcaption>
-        </figure>
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-lj.jpg" data-cap="LJ · air conditioning services"><img src="images/feedback-lj.jpg" alt="Chat screenshot: client LJ, air conditioning services, has inquiries coming in" loading="lazy"></button>
-          <figcaption><b>LJ</b> · air conditioning services, inquiries coming in</figcaption>
-        </figure>
-        <figure class="shot reveal">
-          <button class="zoom" type="button" data-full="images/feedback-homer.jpg" data-cap="Homer · health screening ads"><img src="images/feedback-homer.jpg" alt="Chat screenshot with client Homer about a health screening ad campaign" loading="lazy"></button>
-          <figcaption><b>Homer</b> · health screening ads</figcaption>
-        </figure>
-      </div>
+      <p class="note">Client messages were originally in Filipino and are translated here. The original chats are below.</p>
+      <div class="l-title"><h3>The original chats</h3><span>Click a screenshot to enlarge it.</span></div>
+      <div class="masonry"><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-sha.jpg" data-cap="Sha · more inquiries, closing deals, renewing"><img src="images/feedback-sha.jpg" alt="Chat screenshot: client Sha says the ads bring more inquiries and closed deals and will renew" loading="lazy"></button><figcaption><b>Sha</b> · more inquiries, closing deals, renewing</figcaption></figure><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-kc-hauling.jpg" data-cap="Kc Hauling · full of trips every day"><img src="images/feedback-kc-hauling.jpg" alt="Chat screenshot: Kc Hauling reports no concerns and trips every day" loading="lazy"></button><figcaption><b>Kc Hauling</b> · full of trips every day</figcaption></figure><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-closed-client.jpg" data-cap="Edrief · another client closed from the ad"><img src="images/feedback-closed-client.jpg" alt="Chat screenshot: client reports another client closed from the ad" loading="lazy"></button><figcaption><b>Edrief</b> · another client closed from the ad</figcaption></figure><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-everlyn.jpg" data-cap="Everlyn · many inquiries, possible clients"><img src="images/feedback-everlyn.jpg" alt="Chat screenshot: client Everlyn reports many inquiries" loading="lazy"></button><figcaption><b>Everlyn</b> · many inquiries, possible clients</figcaption></figure><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-ronel.jpg" data-cap="Ronel · happy, upgrading"><img src="images/feedback-ronel.jpg" alt="Chat screenshot: client Ronel is happy and plans to upgrade" loading="lazy"></button><figcaption><b>Ronel</b> · happy, upgrading</figcaption></figure><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-lj.jpg" data-cap="LJ · air conditioning services, inquiries coming in"><img src="images/feedback-lj.jpg" alt="Chat screenshot: client LJ, air conditioning services, has inquiries coming in" loading="lazy"></button><figcaption><b>LJ</b> · air conditioning services, inquiries coming in</figcaption></figure><figure class="shot"><button class="zoom" type="button" data-full="images/feedback-homer.jpg" data-cap="Homer · health screening ads"><img src="images/feedback-homer.jpg" alt="Chat screenshot with client Homer about a health screening ad campaign" loading="lazy"></button><figcaption><b>Homer</b> · health screening ads</figcaption></figure></div>
     </div>
   </section>
 
-  <!-- TOOLS WE USE -->
-  <section id="tools">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Tools We Use</span>
-        <h2>The tools behind the results.</h2>
-        <p>Ad platforms, creative tools, page builders, AI assistants and everyday office apps.</p>
+  <!-- TOOLS -->
+  <section class="sec" id="tools" data-sec="tools">
+    <div class="wrap">
+      <div class="sec-head"><h2>Tools We Use</h2><p class="lead">The platforms, creative tools and assistants behind every campaign.</p></div>
+      <div class="trays">
+        <figure class="tray"><img src="images/tools-platforms.jpg" alt="Logos: Meta, Google, Docs, Excel, PowerPoint, Canva, CapCut, Webcake, Facebook, TikTok, Shopee and ChatGPT" width="1200" height="762" loading="lazy"><figcaption>Ad platforms and core tools</figcaption></figure>
+        <figure class="tray"><img src="images/tools-office.jpg" alt="Logos: Excel, Word, ElevenLabs, Claude, Zoom, Google Meet, Gmail and Gemini" width="1200" height="762" loading="lazy"><figcaption>Office, AI and meetings</figcaption></figure>
+        <figure class="tray"><img src="images/tools-creative.jpg" alt="Logos: Canva, Google Photos, Excel, Zoom, Viber, Facebook, Instagram, CapCut and Webcake" width="1200" height="808" loading="lazy"><figcaption>Creative, social and page building</figcaption></figure>
       </div>
-
-      <div class="tool-cards">
-        <figure class="tool-card reveal" style="margin:0"><img src="images/tools-platforms.jpg" alt="Logos of Meta, Google, Docs, Excel, PowerPoint, Canva, CapCut, Webcake, Facebook, TikTok, Shopee and ChatGPT" loading="lazy"><h4>Ad platforms &amp; core tools</h4></figure>
-        <figure class="tool-card reveal" style="margin:0"><img src="images/tools-office.jpg" alt="Logos of Excel, Word, ElevenLabs, Claude, Zoom, Google Meet, Gmail and Gemini" loading="lazy"><h4>Office, AI &amp; meetings</h4></figure>
-        <figure class="tool-card reveal" style="margin:0"><img src="images/tools-creative.jpg" alt="Logos of Canva, Google Photos, Excel, Zoom, Viber, Facebook, Instagram, CapCut and Webcake" loading="lazy"><h4>Creative, social &amp; page building</h4></figure>
-      </div>
-
-      <div class="chips center reveal">
-        <span class="chip plain">Meta Ads Manager</span><span class="chip plain">Facebook</span><span class="chip plain">Instagram</span><span class="chip plain">TikTok</span><span class="chip plain">Shopee</span>
-        <span class="chip plain">Canva</span><span class="chip plain">CapCut</span><span class="chip plain">Webcake</span><span class="chip plain">ElevenLabs</span>
-        <span class="chip plain">ChatGPT</span><span class="chip plain">Claude</span><span class="chip plain">Gemini</span>
-        <span class="chip plain">Excel</span><span class="chip plain">Word</span><span class="chip plain">PowerPoint</span><span class="chip plain">Google Docs</span><span class="chip plain">Gmail</span><span class="chip plain">Google Photos</span>
-        <span class="chip plain">Zoom</span><span class="chip plain">Google Meet</span><span class="chip plain">Viber</span>
-      </div>
+      <div class="pills"><span>Meta Ads Manager</span><span>Facebook</span><span>Instagram</span><span>TikTok</span><span>Shopee</span><span>Canva</span><span>CapCut</span><span>Webcake</span><span>ElevenLabs</span><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Excel</span><span>Word</span><span>PowerPoint</span><span>Google Docs</span><span>Gmail</span><span>Google Photos</span><span>Zoom</span><span>Google Meet</span><span>Viber</span></div>
     </div>
   </section>
 
-  <!-- SET AN APPOINTMENT -->
-  <section id="appointment" class="appt">
-    <div class="container">
-      <div class="appt-box reveal">
+  <!-- APPOINTMENT -->
+  <section class="sec alt" id="appointment" data-sec="appointment">
+    <div class="wrap">
+      <div class="appt-grid">
         <div>
-          <span class="eyebrow" style="color:var(--teal)">Set an appointment</span>
-          <h2>Let's talk about your ads.</h2>
-          <p class="intro">Pick a date and time that works for you. We'll confirm the appointment and talk through your goals, budget and the best way to run your campaigns.</p>
-          <ul class="appt-points">
-            <li>Tell us your preferred date and time</li>
+          <h2>Set an appointment</h2>
+          <p class="lead">Tell us when you're free. We'll confirm by phone or email and walk you through how we'd run your ads.</p>
+          <ol class="flow">
+            <li>Choose the date and time that suits you</li>
             <li>We confirm by phone or email</li>
-            <li>We walk through how we'd run your ads</li>
-          </ul>
+            <li>We talk through your goals, budget and campaigns</li>
+          </ol>
+          <div class="alt-book"><span>Prefer to chat?</span><button class="btn sm" type="button" id="bookViaChat">Book with our assistant</button></div>
         </div>
-
-        <form class="appt-form" id="apptForm" novalidate>
-          <div class="field">
-            <label for="f-name">Full name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Juan Dela Cruz" required>
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone number</label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="09XX XXX XXXX" pattern="[0-9+\-\s()]{7,20}" required>
-          </div>
-          <div class="field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-date">Preferred date</label>
-              <input id="f-date" name="date" type="date" required>
+        <div>
+          <form class="slip" id="apptForm" novalidate>
+            <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Juan Dela Cruz" required maxlength="80"></div>
+            <div class="field"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0912 345 6789" required pattern="[0-9+\(\)\s\-]{7,30}" maxlength="30"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="120"></div>
+            <div class="frow">
+              <div class="field"><label for="f-date">Preferred date</label><input id="f-date" name="date" type="date" required></div>
+              <div class="field"><label for="f-time">Preferred time (PHT)</label><input id="f-time" name="time" type="time" required></div>
             </div>
-            <div class="field">
-              <label for="f-time">Preferred time</label>
-              <input id="f-time" name="time" type="time" required>
-            </div>
-          </div>
-          <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
-          <button type="submit" class="btn btn-primary" id="submitBtn">Request appointment</button>
-          <p class="fine">Times are in Philippine Time (PHT). We'll only use your details to arrange the appointment.</p>
-        </form>
+            <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="fmsg" id="fMsg" role="alert" hidden></div>
+            <button class="btn primary" type="submit" id="fBtn">Request appointment</button>
+            <p class="fine">Times are in Philippine Time (PHT). We only use your details to arrange this appointment.</p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
-  <div class="container">
-    <span>© <span id="year">2026</span> Prime Scale. All rights reserved.</span>
-    <a href="#top">Back to top ↑</a>
+  <div class="wrap foot">
+    <a class="brand" href="#top"><img src="images/logo-112.png" alt="" width="40" height="40"><span>Prime Scale</span></a>
+    <nav aria-label="Footer"><a href="#who">Who is Prime Scale</a><a href="#projects">Projects</a><a href="#contact">Contact Info</a><a href="https://www.instagram.com/primescale.19/" target="_blank" rel="noopener" data-track="instagram">Instagram</a><a href="/admin/" rel="nofollow">Admin</a></nav>
+    <small>© <span id="year">2026</span> Prime Scale. We scale brands. You grow.</small>
   </div>
 </footer>
 
-<!-- Image lightbox -->
-<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image preview">
-  <button class="lb-close" id="lbClose" type="button" aria-label="Close preview">✕</button>
+<!-- Lightbox -->
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image preview">
+  <button type="button" id="lbX" aria-label="Close preview"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
   <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
 </div>
 
+<!-- Chat widget -->
+<div class="chat-hint" id="chatHint" hidden>Questions? Ask our assistant.</div>
+<button class="chat-btn" id="chatBtn" type="button" aria-label="Open chat with the Prime Scale assistant" aria-expanded="false" aria-controls="chat"><img src="images/logo-112.png" alt="" width="64" height="64"><span class="chat-badge" id="chatBadge" hidden>1</span></button>
+<section class="chat" id="chat" hidden aria-label="Chat with Prime Scale">
+  <div class="chat-head"><img src="images/logo-112.png" alt="" width="42" height="42"><div><b>Prime Scale Assistant</b><small><i></i><span id="chatStat">Replies instantly</span></small></div><button class="x" id="chatX" type="button" aria-label="Close chat"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+  <div class="chat-msgs" id="chatMsgs" role="log" aria-live="polite"></div>
+  <div class="chat-q" id="chatQuick"></div>
+  <div class="chat-x" id="chatExtra"></div>
+  <form class="chat-in" id="chatForm" autocomplete="off"><input id="chatInput" type="text" placeholder="Type your message" aria-label="Type your message" maxlength="500"><button type="submit" aria-label="Send message"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></button></form>
+  <div class="chat-foot">AI assistant. A team member can join the chat.</div>
+</section>
+
 <script>
-  /* ---------- Appointment form settings ----------
-     To receive appointment requests in your inbox, create a free form at
-     https://formspree.io (or https://web3forms.com), then paste its endpoint here, e.g.
-     const FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
-     While this is empty, the form opens the visitor's email app with the details filled in. */
-  const FORM_ENDPOINT = "";
-  const FALLBACK_EMAILS = "reymarkbdulutan@gmail.com,dlanorromanes15@gmail.com";
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var root = document.documentElement;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) { return null; } return null; }
+  var vid = store('ps_vid');
+  if (!vid) { vid = 'v' + Math.random().toString(36).slice(2, 12); store('ps_vid', vid); }
 
-  (function () {
-    var root = document.documentElement;
+  /* ---------- visitor analytics (anonymous) ---------- */
+  function track(type, name) {
+    try {
+      var body = JSON.stringify({ type: type, name: name || '', vid: vid, ref: document.referrer || '' });
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }));
+      else fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+    } catch (e) { /* ignore */ }
+  }
+  track('view');
+  document.addEventListener('click', function (e) { var t = e.target.closest('[data-track]'); if (t) track('click', t.getAttribute('data-track')); });
 
-    /* Theme */
-    var themeBtn = document.getElementById('themeToggle');
-    function paint() { themeBtn.textContent = root.getAttribute('data-theme') === 'dark' ? '☀' : '☾'; }
-    paint();
-    themeBtn.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      paint();
-    });
+  /* ---------- theme ---------- */
+  var themeBtn = $('#themeBtn');
+  function paintTheme() {
+    var dark = root.getAttribute('data-theme') !== 'light';
+    themeBtn.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#' + (dark ? 'i-sun' : 'i-moon') + '"/></svg>';
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  paintTheme();
+  themeBtn.addEventListener('click', function () { var n = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light'; root.setAttribute('data-theme', n); store('ps_theme', n); paintTheme(); });
 
-    /* Mobile menu */
-    var menuBtn = document.getElementById('menuBtn');
-    var navLinks = document.getElementById('navLinks');
-    function closeMenu() { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.textContent = '☰'; }
-    menuBtn.addEventListener('click', function () {
-      var open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.textContent = open ? '✕' : '☰';
-    });
-    navLinks.addEventListener('click', function (e) { if (e.target.tagName === 'A') closeMenu(); });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* Reveal on scroll */
-    var items = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { threshold: 0.08 });
-      items.forEach(function (el) { io.observe(el); });
-    } else { items.forEach(function (el) { el.classList.add('in'); }); }
-
-    /* Lightbox */
-    var lb = document.getElementById('lightbox');
-    var lbImg = document.getElementById('lbImg');
-    var lbCap = document.getElementById('lbCap');
-    var lastFocus = null;
-    function openLb(btn) {
-      lastFocus = btn;
-      lbImg.src = btn.getAttribute('data-full');
-      lbImg.alt = (btn.querySelector('img') || {}).alt || '';
-      lbCap.textContent = btn.getAttribute('data-cap') || '';
-      lb.hidden = false;
-      document.body.style.overflow = 'hidden';
-      document.getElementById('lbClose').focus();
+  /* ---------- nav, menu, rail ---------- */
+  var nav = $('#nav'), menu = $('#menu'), menuBtn = $('#menuBtn'), railFill = $('#railFill');
+  function onScroll() {
+    nav.classList.toggle('solid', window.scrollY > 24);
+    if (railFill) {
+      var max = document.documentElement.scrollHeight - innerHeight;
+      var rail = railFill.parentNode; var h = rail.getBoundingClientRect().height - 12;
+      railFill.style.height = Math.max(0, Math.min(1, window.scrollY / Math.max(1, max))) * h + 'px';
     }
-    function closeLb() {
-      lb.hidden = true; lbImg.src = '';
-      document.body.style.overflow = '';
-      if (lastFocus) lastFocus.focus();
+    wordScroll();
+  }
+  menuBtn.addEventListener('click', function () { var o = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(o)); });
+  menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); } });
+  $('#year').textContent = new Date().getFullYear();
+
+  var secs = $$('[data-sec]');
+  var seen = {};
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var id = e.target.getAttribute('data-sec');
+        $$('.links a, .rail a').forEach(function (a) { var h = (a.getAttribute('href') || '').slice(1); a.classList.toggle('on', h === id || (id === 'top' && h === 'top')); });
+        if (!seen[id]) { seen[id] = 1; track('section', id); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    secs.forEach(function (s) { io.observe(s); });
+
+    /* counters and drawn icons run once, when scrolled into view */
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io2.unobserve(e.target);
+        if (e.target.hasAttribute('data-count')) count(e.target); else e.target.classList.add('go');
+      });
+    }, { threshold: 0.4 });
+    $$('[data-count]').forEach(function (el) { io2.observe(el); });
+    $$('.draw').forEach(function (el) { io2.observe(el); });
+  } else { $$('.draw').forEach(function (el) { el.classList.add('go'); }); }
+
+  function fmt(n, d) { return n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  function count(el) {
+    if (reduce) return;
+    var to = parseFloat(el.getAttribute('data-count')), d = +el.getAttribute('data-dec') || 0, pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '';
+    var t0 = null, dur = 1500;
+    function step(t) {
+      if (!t0) t0 = t;
+      var p = Math.min(1, (t - t0) / dur), k = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + fmt(to * k, d) + suf;
+      if (p < 1) requestAnimationFrame(step);
     }
-    document.addEventListener('click', function (e) {
-      var z = e.target.closest('.zoom');
-      if (z) { openLb(z); return; }
-      if (!lb.hidden && (e.target === lb || e.target.id === 'lbClose' || e.target.closest('#lbClose'))) closeLb();
+    el.textContent = pre + fmt(0, d) + suf;
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- hero bars react to the pointer ---------- */
+  var bars = $$('.bar-r'), hero = $('#hero');
+  if (bars.length && !reduce && window.matchMedia('(pointer: fine)').matches) {
+    var tx = null, raf = 0;
+    var apply = function () {
+      raf = 0;
+      bars.forEach(function (b, i) {
+        var pos = 0.36 + (i / (bars.length - 1)) * 0.62, s = 1;
+        if (tx !== null) { var d = tx - pos; s = 1 + 0.17 * Math.exp(-(d * d) / 0.012); }
+        b.style.setProperty('--s', s.toFixed(3));
+      });
+    };
+    hero.addEventListener('pointermove', function (e) { var r = hero.getBoundingClientRect(); tx = (e.clientX - r.left) / r.width; if (!raf) raf = requestAnimationFrame(apply); });
+    hero.addEventListener('pointerleave', function () { tx = null; apply(); });
+  }
+
+  /* ---------- mission and vision words light up as you read ---------- */
+  $$('.mv p').forEach(function (p) {
+    var words = p.textContent.trim().split(/\s+/); p.textContent = '';
+    words.forEach(function (w, i) { var s = document.createElement('span'); s.className = 'w'; s.textContent = w + (i < words.length - 1 ? ' ' : ''); p.appendChild(s); });
+    if (!reduce) p.classList.add('wordy');
+  });
+  function wordScroll() {
+    $$('.mv p.wordy').forEach(function (p) {
+      var r = p.getBoundingClientRect(), vh = innerHeight;
+      var prog = Math.max(0, Math.min(1, (vh * 0.88 - r.top) / (r.height + vh * 0.3)));
+      var ws = p.children, k = Math.round(prog * ws.length);
+      for (var i = 0; i < ws.length; i++) ws[i].classList.toggle('on', i < k);
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
 
-    /* Appointment form */
-    var form = document.getElementById('apptForm');
-    var msg = document.getElementById('formMsg');
-    var btn = document.getElementById('submitBtn');
-    var dateInput = document.getElementById('f-date');
-    (function setMinDate() {
-      var d = new Date(); var m = String(d.getMonth() + 1).padStart(2, '0'); var day = String(d.getDate()).padStart(2, '0');
-      dateInput.min = d.getFullYear() + '-' + m + '-' + day;
-    })();
+  /* ---------- lightbox ---------- */
+  var lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap'), lastFocus = null;
+  function openLb(btn) {
+    lastFocus = btn; lbImg.src = btn.getAttribute('data-full'); lbImg.alt = (btn.querySelector('img') || {}).alt || '';
+    lbCap.textContent = btn.getAttribute('data-cap') || ''; lb.hidden = false; document.body.style.overflow = 'hidden'; $('#lbX').focus();
+  }
+  function closeLb() { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest('.zoom'); if (z) { openLb(z); return; }
+    if (!lb.hidden && (e.target === lb || e.target.closest('#lbX'))) closeLb();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (!lb.hidden) closeLb(); else if (CH.open) closeChat(); } });
 
-    function show(text, ok) { msg.textContent = text; msg.className = 'form-msg show ' + (ok ? 'ok' : 'err'); }
-    function nice(dateStr, timeStr) {
-      try {
-        var d = new Date(dateStr + 'T' + timeStr);
-        return d.toLocaleDateString('en-PH', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + ' at ' +
-               d.toLocaleTimeString('en-PH', { hour: 'numeric', minute: '2-digit' });
-      } catch (e) { return dateStr + ' ' + timeStr; }
+  /* ---------- network helper ---------- */
+  function post(url, data) {
+    return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) { var e = new Error(j.error || 'Request failed'); e.status = r.status; throw e; } return j; });
+    });
+  }
+  var now = new Date();
+  var todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  function niceDate(iso) { var p = iso.split('-'); return MONTHS[+p[1] - 1] + ' ' + (+p[2]) + ', ' + p[0]; }
+  function nice12(t) { var p = t.split(':'), h = +p[0]; return ((h % 12) || 12) + ':' + p[1] + ' ' + (h >= 12 ? 'PM' : 'AM'); }
+
+  /* ---------- appointment form ---------- */
+  var af = $('#apptForm'), fMsg = $('#fMsg'), fBtn = $('#fBtn');
+  af.elements.date.min = todayStr;
+  af.addEventListener('submit', function (e) {
+    e.preventDefault(); fMsg.hidden = true;
+    if (!af.checkValidity()) { af.reportValidity(); return; }
+    var d = { name: af.elements.name.value, phone: af.elements.phone.value, email: af.elements.email.value, date: af.elements.date.value, time: af.elements.time.value, website: af.elements.website.value, vid: vid, ref: document.referrer || '' };
+    fBtn.disabled = true; fBtn.textContent = 'Sending';
+    post('/api/appointment', d).then(function (r) {
+      if (!r.persisted) throw new Error('offline');
+      success(d);
+    }).catch(function (err) {
+      if (err.status === 400 || err.status === 429) { fMsg.textContent = err.message; fMsg.hidden = false; return; }
+      /* server or database unavailable: hand the details to the visitor's email app so the request is not lost */
+      var body = 'Hi Prime Scale,\n\nI would like to set an appointment.\n\nName: ' + d.name + '\nPhone: ' + d.phone + '\nEmail: ' + d.email + '\nPreferred date and time: ' + niceDate(d.date) + ' at ' + nice12(d.time) + ' PHT\n\nThank you!';
+      window.location.href = 'mailto:reymarkbdulutan@gmail.com,dlanorromanes15@gmail.com?subject=' + encodeURIComponent('Appointment request: ' + d.name) + '&body=' + encodeURIComponent(body);
+      fMsg.textContent = 'We could not save your request online, so your email app should open with the details filled in. Press send to complete it.'; fMsg.hidden = false;
+    }).then(function () { fBtn.disabled = false; fBtn.textContent = 'Request appointment'; });
+  });
+  function success(d) {
+    var first = d.name.trim().split(/\s+/)[0];
+    af.textContent = '';
+    var box = document.createElement('div'); box.className = 'success'; box.setAttribute('role', 'status');
+    box.innerHTML = '<svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="35" pathLength="1"/><path d="M24 41l11 11 21-23" pathLength="1"/></svg><h3></h3><p></p>';
+    box.querySelector('h3').textContent = 'Request received, ' + first;
+    box.querySelector('p').textContent = 'We\'ll confirm ' + niceDate(d.date) + ' at ' + nice12(d.time) + ' PHT by phone or email.';
+    af.appendChild(box);
+  }
+
+  /* ---------- chat assistant ---------- */
+  var CH = { id: store('ps_chat') || '', n: 0, open: false, busy: false, unread: 0, idle: 0, timer: 0, started: false, note: false };
+  var panel = $('#chat'), msgs = $('#chatMsgs'), quick = $('#chatQuick'), extra = $('#chatExtra'), cform = $('#chatForm'), cinput = $('#chatInput'), cbtn = $('#chatBtn'), cbadge = $('#chatBadge'), cstat = $('#chatStat'), hint = $('#chatHint');
+  var QUICK = ['What do you offer?', 'Show me results', 'Book an appointment', 'Contact the team'];
+
+  function linkify(text) {
+    var frag = document.createDocumentFragment(), last = 0, m;
+    var re = /(https?:\/\/[^\s]+|[\w.+-]+@[\w-]+\.[\w.-]+|\+?\d[\d\s().-]{8,}\d)/g;
+    while ((m = re.exec(text))) {
+      var s = m[0];
+      if (!/^https?:|@/.test(s) && s.replace(/\D/g, '').length < 9) continue;
+      if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      var a = document.createElement('a'); a.textContent = s;
+      if (/^https?:/.test(s)) { a.href = s; a.target = '_blank'; a.rel = 'noopener'; } else if (s.indexOf('@') > -1) a.href = 'mailto:' + s; else a.href = 'tel:' + s.replace(/[^\d+]/g, '');
+      frag.appendChild(a); last = m.index + s.length;
     }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      msg.className = 'form-msg';
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var data = Object.fromEntries(new FormData(form).entries());
-      if (data.website) return; /* honeypot */
-      var when = nice(data.date, data.time);
-
-      if (FORM_ENDPOINT) {
-        btn.disabled = true; btn.textContent = 'Sending…';
-        fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            name: data.name, phone: data.phone, email: data.email,
-            preferred_date: data.date, preferred_time: data.time,
-            preferred_schedule: when, _subject: 'Prime Scale appointment request from ' + data.name
-          })
-        }).then(function (r) {
-          if (!r.ok) throw new Error('bad status');
-          form.reset();
-          show('Thank you, ' + data.name + '! We received your request for ' + when + ' and will confirm shortly.', true);
-        }).catch(function () {
-          show('Sorry, something went wrong sending your request. Please try again or contact us directly using the details above.', false);
-        }).finally(function () { btn.disabled = false; btn.textContent = 'Request appointment'; });
-      } else {
-        var subject = 'Appointment request: ' + data.name;
-        var body = 'Hi Prime Scale,\n\nI would like to set an appointment.\n\n' +
-          'Name: ' + data.name + '\nPhone: ' + data.phone + '\nEmail: ' + data.email +
-          '\nPreferred date and time: ' + when + '\n\nThank you!';
-        window.location.href = 'mailto:' + FALLBACK_EMAILS + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        show('Your email app should open with your appointment details filled in. Just press send to complete your request.', true);
-      }
-    });
-  })();
+    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    return frag;
+  }
+  function bubble(role, text, who) {
+    var d = document.createElement('div'); d.className = 'm ' + role;
+    if (who) { var w = document.createElement('span'); w.className = 'who'; w.textContent = who; d.appendChild(w); }
+    d.appendChild(role === 'visitor' ? document.createTextNode(text) : linkify(text));
+    msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d;
+  }
+  function sys(text) { return bubble('sys', text); }
+  function typing(on) {
+    var t = $('.typing', msgs);
+    if (on && !t) { t = document.createElement('div'); t.className = 'typing'; t.innerHTML = '<i></i><i></i><i></i>'; msgs.appendChild(t); msgs.scrollTop = msgs.scrollHeight; }
+    if (!on && t) t.remove();
+  }
+  function controls(last) {
+    quick.textContent = ''; extra.textContent = '';
+    if (!last || last.r === 'visitor') return;
+    if (last.ui === 'date' || last.ui === 'time') {
+      var inp = document.createElement('input'); inp.type = last.ui; inp.setAttribute('aria-label', last.ui === 'date' ? 'Choose a date' : 'Choose a time');
+      if (last.ui === 'date') inp.min = todayStr;
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn primary sm'; b.textContent = last.ui === 'date' ? 'Use this date' : 'Use this time';
+      b.onclick = function () { if (!inp.value) return; send(last.ui === 'date' ? niceDate(inp.value) : nice12(inp.value)); };
+      extra.appendChild(inp); extra.appendChild(b);
+    }
+    (last.q || []).forEach(function (q) { var b = document.createElement('button'); b.type = 'button'; b.textContent = q; b.onclick = function () { send(q); }; quick.appendChild(b); });
+  }
+  function status(res) {
+    cstat.textContent = res.adminActive ? 'A team member is replying' : (res.ai ? 'AI assistant' : 'Replies instantly');
+  }
+  function render(m) {
+    bubble(m.r === 'visitor' ? 'visitor' : m.r, m.t, m.r === 'admin' ? 'Prime Scale team' : '');
+  }
+  function reset() { CH.id = ''; CH.n = 0; store('ps_chat', null); }
+  function applyRes(res) {
+    if (!res.id) { if (CH.id) { reset(); msgs.textContent = ''; greet(); } return; }
+    var list = res.msgs || [];
+    list.forEach(function (m) { render(m); if (!CH.open && m.r !== 'visitor') CH.unread++; });
+    CH.n = res.total; status(res);
+    var last = list.length ? list[list.length - 1] : null;
+    if (last) { controls(last); CH.last = last; }
+    if (res.adminActive && CH.last && CH.last.r === 'visitor' && !CH.note) { CH.note = true; sys('A team member has joined and will reply here shortly.'); }
+    if (!res.adminActive) CH.note = false;
+    if (!CH.open && CH.unread) { cbadge.textContent = CH.unread; cbadge.hidden = false; }
+  }
+  function greet() {
+    bubble('ai', "Hi! I'm the Prime Scale Assistant. I can explain our services and results, share contact details, or set up an appointment with the founders. What would you like to know?");
+    controls({ r: 'ai', q: QUICK });
+  }
+  function send(text) {
+    text = (text || '').trim(); if (!text || CH.busy) return;
+    CH.busy = true; controls(null);
+    var p = bubble('visitor', text); p.classList.add('pending'); typing(true);
+    post('/api/chat', { action: 'send', id: CH.id, text: text, after: CH.n, vid: vid, ref: document.referrer || '' }).then(function (res) {
+      p.remove(); typing(false);
+      if (res.id && res.id !== CH.id) { CH.id = res.id; store('ps_chat', CH.id); }
+      applyRes(res); CH.idle = 0;
+    }).catch(function (err) {
+      p.remove(); typing(false); bubble('visitor', text);
+      sys(err.status === 429 ? err.message : 'The chat is unavailable right now. Please use the contact details on this page, or the appointment form.');
+      controls({ r: 'ai', q: QUICK });
+    }).then(function () { CH.busy = false; poll(); });
+  }
+  function poll(delay) {
+    clearTimeout(CH.timer); if (!CH.id) return;
+    var d = delay != null ? delay : (CH.open ? (CH.idle > 15 ? 9000 : 4000) : 30000);
+    CH.timer = setTimeout(function () {
+      if (document.hidden || CH.busy) { poll(); return; }
+      post('/api/chat', { action: 'poll', id: CH.id, after: CH.n }).then(function (res) {
+        var before = CH.n; applyRes(res); CH.idle = CH.n > before ? 0 : CH.idle + 1;
+      }).catch(function () {}).then(function () { poll(); });
+    }, d);
+  }
+  function openChat() {
+    panel.hidden = false; hint.hidden = true; store('ps_hint', '1');
+    requestAnimationFrame(function () { panel.classList.add('open'); });
+    CH.open = true; CH.unread = 0; cbadge.hidden = true; cbtn.setAttribute('aria-expanded', 'true'); track('chatopen');
+    if (!CH.started) { CH.started = true; if (CH.id) poll(0); else greet(); }
+    else poll(0);
+    setTimeout(function () { cinput.focus(); }, 250);
+  }
+  function closeChat() {
+    CH.open = false; panel.classList.remove('open'); cbtn.setAttribute('aria-expanded', 'false');
+    setTimeout(function () { if (!CH.open) panel.hidden = true; }, 300); cbtn.focus(); poll();
+  }
+  cbtn.addEventListener('click', function () { if (CH.open) closeChat(); else openChat(); });
+  $('#chatX').addEventListener('click', closeChat);
+  cform.addEventListener('submit', function (e) { e.preventDefault(); var t = cinput.value; cinput.value = ''; send(t); });
+  $('#bookViaChat').addEventListener('click', function () { openChat(); setTimeout(function () { send('Book an appointment'); }, 350); });
+  if (CH.id) { CH.started = false; poll(5000); }
+  if (!store('ps_hint')) setTimeout(function () { if (!CH.open) { hint.hidden = false; setTimeout(function () { hint.hidden = true; }, 9000); } }, 6000);
+})();
 </script>
 </body>
 </html>
