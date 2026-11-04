@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 <script>
   document.documentElement.classList.add('js');
+  try { if (!sessionStorage.getItem('ps_intro') && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { document.documentElement.classList.add('introing'); setTimeout(function () { document.documentElement.classList.remove('introing'); }, 5000); } } catch (e) {}
   try { var t = localStorage.getItem('ps_theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
 <style>
@@ -415,6 +416,50 @@
     .founder { grid-template-columns: 1fr; }
     .athena .nums { grid-template-columns: 1fr 1fr; }
   }
+  /* Intro */
+  .intro { display: none; }
+  html.introing .intro { display: grid; position: fixed; inset: 0; z-index: 300; place-items: center; background: radial-gradient(600px 400px at 50% 50%, rgba(26,109,255,.22), transparent 70%), var(--bg); transition: opacity .7s ease, transform .7s cubic-bezier(.6,0,.2,1), visibility .7s; }
+  html.introing .intro.out, .intro.out { opacity: 0; transform: scale(1.06); visibility: hidden; pointer-events: none; }
+  html.introing body { overflow: hidden; }
+  .intro-in { position: relative; width: 190px; text-align: center; }
+  .intro-ring { position: absolute; left: 0; top: 0; width: 190px; height: 190px; transform: rotate(-90deg); filter: drop-shadow(0 0 14px rgba(47,140,255,.7)); }
+  .intro-ring circle { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.3s cubic-bezier(.5,0,.2,1) .15s forwards; }
+  .intro-in img { width: 150px; height: 150px; margin: 20px; border-radius: 50%; opacity: 0; transform: scale(.7); animation: introLogo .9s cubic-bezier(.2,.8,.2,1) .45s forwards; }
+  .intro-name { margin-top: 14px; font: 600 15px var(--display); letter-spacing: .42em; padding-left: .42em; opacity: 0; animation: fade .6s ease 1s forwards; }
+  .intro-bar { margin: 16px auto 0; width: 120px; height: 3px; border-radius: 2px; background: var(--line); overflow: hidden; }
+  .intro-bar i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #2f8cff, #ff9e4a); transform: scaleX(0); transform-origin: left; animation: introBar 1.7s cubic-bezier(.4,0,.2,1) .2s forwards; }
+  @keyframes introLogo { to { opacity: 1; transform: none; } }
+  @keyframes introBar { to { transform: scaleX(1); } }
+  html.introing .hero *, html.introing .hero *::before, html.introing .hero *::after { animation-play-state: paused !important; }
+
+  /* Hero atmosphere */
+  .blobs, .parts { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+  .blobs i { position: absolute; border-radius: 50%; filter: blur(80px); animation: drift 16s ease-in-out infinite alternate; }
+  .blobs i:nth-child(1) { width: 520px; height: 520px; left: 4%; top: 10%; background: rgba(26,109,255,.30); }
+  .blobs i:nth-child(2) { width: 400px; height: 400px; right: 20%; bottom: 8%; background: rgba(255,158,74,.16); animation-duration: 21s; animation-direction: alternate-reverse; }
+  @keyframes drift { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(70px, -50px) scale(1.18); } }
+
+  /* Scroll reveals */
+  html.rv-on .rv { opacity: 0; transform: translateY(30px); transition: opacity .85s cubic-bezier(.2,.8,.2,1) var(--rd, 0s), transform .85s cubic-bezier(.2,.8,.2,1) var(--rd, 0s), background .25s; }
+  html.rv-on .rv.in { opacity: 1; transform: none; }
+
+  /* 3D tilt */
+  .tilt { perspective: 900px; }
+  .tilt .zoom { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .4s; will-change: transform; }
+  .tilt.live .zoom { transition: transform .08s linear, box-shadow .4s; box-shadow: 0 24px 50px -22px rgba(26,109,255,.7); }
+  .tilt .zoom::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0; transition: opacity .3s; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.34), rgba(255,158,74,.12) 35%, transparent 60%); mix-blend-mode: soft-light; }
+  .tilt.live .zoom::before { opacity: 1; }
+
+  /* Chart polish */
+  .hb b { opacity: 0; transform: translateX(-8px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--i) * 70ms + .7s); }
+  .charts.go .hb b { opacity: 1; transform: none; }
+  .hb .fillb { position: relative; overflow: hidden; }
+  .charts.go .hb .fillb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-120%); animation: shine 1.2s ease calc(var(--i) * 70ms + 1s) 1 forwards; }
+  @keyframes shine { to { transform: translateX(120%); } }
+  .kpi b.done, .proof b.done { animation: numpop .9s ease; transform-origin: left; }
+  @keyframes numpop { 40% { transform: scale(1.06); text-shadow: 0 0 26px var(--oglow); } }
+  .confetti { position: fixed; inset: 0; z-index: 190; pointer-events: none; }
+
   /* Click ripples */
   .ripples { position: fixed; inset: 0; z-index: 200; pointer-events: none; overflow: hidden; }
   .rp { position: absolute; width: 0; height: 0; transform: translate(-50%, -50%); }
@@ -426,7 +471,8 @@
   @keyframes ripple { 0% { transform: translate(-50%, -50%) scale(0); opacity: .95; } 70% { opacity: .35; } 100% { transform: translate(-50%, -50%) scale(1); opacity: 0; } }
   @keyframes dot { to { transform: scale(2.6); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) {
-    .ripples { display: none; }
+    .ripples, .parts, .blobs i, .intro { display: none !important; }
+    .hb b { opacity: 1; transform: none; transition: none; }
     .hb .fillb { transform: none; transition: none; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; transition-duration: .001s !important; }
@@ -438,6 +484,14 @@
 </style>
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-in">
+    <svg class="intro-ring" viewBox="0 0 200 200"><defs><linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f8cff"/><stop offset=".6" stop-color="#1148f5"/><stop offset="1" stop-color="#ff9e4a"/></linearGradient></defs><circle cx="100" cy="100" r="92" pathLength="1" fill="none" stroke="url(#ig)" stroke-width="3" stroke-linecap="round"/></svg>
+    <img src="images/logo.png" alt="" width="640" height="640">
+    <div class="intro-name">PRIME SCALE</div>
+    <div class="intro-bar"><i></i></div>
+  </div>
+</div>
 
 <!-- icons -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -503,6 +557,8 @@
 
   <!-- HERO -->
   <section class="hero" id="hero" data-sec="top">
+    <div class="blobs" aria-hidden="true"><i></i><i></i></div>
+    <canvas class="parts" id="parts" aria-hidden="true"></canvas>
     <div class="stage" aria-hidden="true">
       <svg viewBox="0 0 660 520" preserveAspectRatio="xMaxYMax meet">
         <defs>
@@ -564,7 +620,7 @@
           <div class="ph"><img src="images/reymark.jpg" alt="Reymark Dulutan" width="900" height="900" loading="lazy"></div>
           <div>
             <h3>Reymark Dulutan</h3>
-            <div class="role">Co-founder and Social Media Ads Manager</div>
+            <div class="role">Co-founder and Ads Manager</div>
             <p>Ads Manager for Facebook, TikTok, Shopee and other social media platforms for over 2 years. I help businesses turn their marketing efforts into organized, measurable and scalable systems.</p>
             <p>I handle campaign strategy, setup, audience targeting, creative coordination, optimization and performance monitoring.</p>
             <div class="tags"><span class="tag">Facebook Ads</span><span class="tag">TikTok Ads</span><span class="tag">Shopee Ads</span></div>
@@ -627,7 +683,7 @@
       <div class="sec-head"><h2>Contact Info</h2><p class="lead">Message or call either founder directly. WhatsApp uses the same number as the phone.</p></div>
       <div class="contact-grid">
         <div class="pc">
-          <h3>Reymark Dulutan</h3><div class="role">Co-founder and Social Media Ads Manager</div>
+          <h3>Reymark Dulutan</h3><div class="role">Co-founder and Ads Manager</div>
           <a class="clink" href="mailto:reymarkbdulutan@gmail.com" data-track="email-reymark"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span><span><small>Email</small><b>reymarkbdulutan@gmail.com</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
           <a class="clink" href="tel:+639912970369" data-track="phone-reymark"><span class="cic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span><small>Phone</small><b>+63 991 297 0369</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
           <a class="clink wa" href="https://wa.me/639912970369" target="_blank" rel="noopener" data-track="whatsapp-reymark"><span class="cic"><svg class="ic fill" aria-hidden="true"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small><b>+63 991 297 0369</b></span><svg class="ic go" aria-hidden="true"><use href="#i-out"/></svg></a>
@@ -812,6 +868,98 @@
   track('view');
   document.addEventListener('click', function (e) { var t = e.target.closest('[data-track]'); if (t) track('click', t.getAttribute('data-track')); });
 
+  /* ---------- intro, hero atmosphere, reveals, tilt, confetti ---------- */
+  var intro = $('#intro');
+  if (intro) {
+    if (root.classList.contains('introing')) {
+      var introDone = false;
+      var endIntro = function () { if (introDone) return; introDone = true; intro.classList.add('out'); root.classList.remove('introing'); setTimeout(function () { intro.remove(); }, 900); };
+      try { sessionStorage.setItem('ps_intro', '1'); } catch (e) { /* ignore */ }
+      setTimeout(endIntro, 2200);
+      intro.addEventListener('pointerdown', endIntro);
+      document.addEventListener('keydown', endIntro, { once: true });
+    } else { intro.remove(); }
+  }
+
+  /* floating glow particles behind the hero */
+  (function () {
+    var cv = $('#parts'); if (!cv || reduce || !cv.getContext) return;
+    var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5), P = [], running = false, vis = true, last = 0;
+    function size() { var r = cv.getBoundingClientRect(); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    function spawn(initial) {
+      var orange = Math.random() < 0.3;
+      return { x: Math.random() * W, y: initial ? Math.random() * H : H + 10, r: 1 + Math.random() * 2.2, v: 14 + Math.random() * 30, sway: Math.random() * 6.28, sp: 0.4 + Math.random() * 0.8, a: 0.25 + Math.random() * 0.6, c: orange ? '255,158,74' : '90,170,255' };
+    }
+    function init() { size(); var n = innerWidth < 700 ? 22 : 46; P = []; for (var i = 0; i < n; i++) P.push(spawn(true)); }
+    function frame(t) {
+      if (!running) return;
+      var dt = Math.min(0.05, (t - last) / 1000 || 0.016); last = t;
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < P.length; i++) {
+        var p = P[i]; p.y -= p.v * dt; p.sway += p.sp * dt; p.x += Math.sin(p.sway) * 8 * dt;
+        if (p.y < -10) { P[i] = spawn(false); continue; }
+        var fade = Math.min(1, p.y / (H * 0.25), (H - p.y) / 40 + 0.2);
+        ctx.fillStyle = 'rgba(' + p.c + ',' + (p.a * 0.18 * fade).toFixed(3) + ')'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 4, 0, 6.283); ctx.fill();
+        ctx.fillStyle = 'rgba(' + p.c + ',' + (p.a * fade).toFixed(3) + ')'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    }
+    function sync() { var want = vis && !document.hidden; if (want && !running) { running = true; last = performance.now(); requestAnimationFrame(frame); } else if (!want) running = false; }
+    init(); window.addEventListener('resize', init);
+    document.addEventListener('visibilitychange', sync);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; sync(); }).observe(hero0());
+    function hero0() { return $('#hero'); }
+    sync();
+  })();
+
+  /* staggered reveal as sections scroll into view */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var rvSel = '.sec-head, .what h3, .what-item, .founder, .mv article, .award, .pc, .official, .kpi, .chart, .l-title, .athena, .row, .quote, .shot, .tray, .pills, .flow li, .slip, .alt-book, .dash-note, .dash-cta';
+    var rvEls = $$(rvSel);
+    rvEls.forEach(function (el) {
+      var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.setProperty('--rd', ((sibs % 6) * 0.08).toFixed(2) + 's'); el.classList.add('rv');
+    });
+    root.classList.add('rv-on');
+    var rvIo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rvIo.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    rvEls.forEach(function (el) { rvIo.observe(el); });
+    /* safety: never leave content hidden */
+    setTimeout(function () { rvEls.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('in'); }); }, 2500);
+  }
+
+  /* 3D tilt with a light sheen on certificates and screenshots */
+  if (!reduce && window.matchMedia('(pointer: fine)').matches) {
+    $$('.award, .athena .shots .zoom, .tray').forEach(function (box) {
+      var target = box.classList.contains('zoom') ? box : box.querySelector('.zoom') || box;
+      var host = box.classList.contains('zoom') ? box.parentNode : box;
+      if (!target.classList.contains('zoom')) return;
+      host.classList.add('tilt');
+      target.addEventListener('pointermove', function (e) {
+        var r = target.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        target.style.setProperty('--ry', ((x - 0.5) * 12).toFixed(2) + 'deg'); target.style.setProperty('--rx', ((0.5 - y) * 10).toFixed(2) + 'deg');
+        target.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); target.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+        host.classList.add('live');
+      });
+      target.addEventListener('pointerleave', function () { host.classList.remove('live'); target.style.setProperty('--rx', '0deg'); target.style.setProperty('--ry', '0deg'); });
+    });
+  }
+
+  /* blue and orange confetti when an appointment is booked */
+  function confetti() {
+    if (reduce) return;
+    var cv = document.createElement('canvas'); cv.className = 'confetti'; cv.setAttribute('aria-hidden', 'true'); document.body.appendChild(cv);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2), W = innerWidth, H = innerHeight; cv.width = W * dpr; cv.height = H * dpr;
+    var ctx = cv.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var cols = ['#2f8cff', '#1148f5', '#ff9e4a', '#ffc58a', '#ffffff'], ps = [];
+    for (var i = 0; i < 150; i++) { var a = -Math.PI / 2 + (Math.random() - 0.5) * 1.6, sp = 9 + Math.random() * 10; ps.push({ x: W / 2, y: H * 0.62, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, w: 6 + Math.random() * 6, h: 4 + Math.random() * 5, r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.4, c: cols[i % cols.length] }); }
+    var t0 = performance.now();
+    (function loop(t) {
+      var age = (t - t0) / 1000; ctx.clearRect(0, 0, W, H);
+      ps.forEach(function (p) { p.vy += 0.32; p.vx *= 0.992; p.x += p.vx; p.y += p.vy; p.r += p.vr; ctx.save(); ctx.globalAlpha = Math.max(0, 1 - Math.max(0, age - 2) / 1.2); ctx.translate(p.x, p.y); ctx.rotate(p.r); ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore(); });
+      if (age < 3.4) requestAnimationFrame(loop); else cv.remove();
+    })(t0);
+  }
+
   /* ---------- water ripple on every click or tap ---------- */
   if (!reduce) {
     var layer = document.createElement('div'); layer.className = 'ripples'; layer.setAttribute('aria-hidden', 'true'); document.body.appendChild(layer);
@@ -885,7 +1033,7 @@
       if (!t0) t0 = t;
       var p = Math.min(1, (t - t0) / dur), k = 1 - Math.pow(1 - p, 3);
       el.textContent = pre + fmt(to * k, d) + suf;
-      if (p < 1) requestAnimationFrame(step);
+      if (p < 1) requestAnimationFrame(step); else el.classList.add('done');
     }
     el.textContent = pre + fmt(0, d) + suf;
     requestAnimationFrame(step);
@@ -975,7 +1123,7 @@
     box.innerHTML = '<svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="35" pathLength="1"/><path d="M24 41l11 11 21-23" pathLength="1"/></svg><h3></h3><p></p>';
     box.querySelector('h3').textContent = 'Request received, ' + first;
     box.querySelector('p').textContent = 'We\'ll confirm ' + niceDate(d.date) + ' at ' + nice12(d.time) + ' PHT by phone or email.';
-    af.appendChild(box);
+    af.appendChild(box); confetti();
   }
 
   /* ---------- chat assistant ---------- */
@@ -1031,7 +1179,7 @@
   function applyRes(res) {
     if (!res.id) { if (CH.id) { reset(); msgs.textContent = ''; greet(); } return; }
     var list = res.msgs || [];
-    list.forEach(function (m) { render(m); if (!CH.open && m.r !== 'visitor') CH.unread++; });
+    list.forEach(function (m) { render(m); if (m.r === 'ai' && /^(You're booked for|Booked ka na sa|Naka-book ka na sa)/.test(m.t)) confetti(); if (!CH.open && m.r !== 'visitor') CH.unread++; });
     CH.n = res.total; status(res);
     var last = list.length ? list[list.length - 1] : null;
     if (last) { controls(last); CH.last = last; }
